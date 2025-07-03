@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url('bgimg.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* FLIP CARD STYLES */
+.flip-card {
+    width: 400px;
+    height: 70vh;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.flip-card-front {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flip-card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+    overflow-y: auto; /* Keeps content scrollable if it overflows */
+    display: none; /* Initially hidden */
+    flex-direction: column; /* Added for better layout control on the back */
+    justify-content: space-between; /* Added for better layout control on the back */
+
+    /* HIDE SCROLLBAR STYLES */
+    /* For Webkit browsers (Chrome, Safari, Edge, Opera) */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    /* For Firefox */
+    scrollbar-width: none;
+    /* For IE and Edge (older versions) */
+    -ms-overflow-style: none;
+}
+
+/* FLIP ANIMATION */
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.flip-card-inner.flipped .flip-card-back {
+    display: flex; /* Show as flexbox when flipped */
+}
+
+.flip-card-inner.flipped .flip-card-front {
+    display: none; /* Hide front when flipped */
+}
+
+/* IMAGE CONTAINER */
+.image-container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.flip-card-front img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* CAROUSEL */
+.carousel {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+/* FORM ELEMENTS */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+}
+
+textarea {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    resize: none;
+    width: 100%;
+    height: 120px;
+
+    /* HIDE SCROLLBAR STYLES FOR TEXTAREA */
+    /* For Webkit browsers (Chrome, Safari, Edge, Opera) */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    /* For Firefox */
+    scrollbar-width: none;
+    /* For IE and Edge (older versions) */
+    -ms-overflow-style: none;
+}
+
+/* ICONS */
+.fa-volume-up {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.fa-volume-up:hover {
+    transform: scale(1.1);
+    color: #0062cc;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 576px) {
+    .flip-card {
+        width: 90%;
+        height: 100vh;
+    }
+
+    .image-container,
+    .carousel {
+        height: 150px;
+    }
+
+    .carousel-item img {
+        height: 150px;
+    }
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.1) !important;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(-5px);
+    }
+    40%, 80% {
+        transform: translateX(5px);
+    }
+}
