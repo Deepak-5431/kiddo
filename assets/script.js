@@ -87,7 +87,7 @@ const allAnimals = {
 
   ],
 
-  Birds: [
+  birds: [
     {
       name: "peacock",
       folder: "peacock",
