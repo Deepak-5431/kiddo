@@ -13,7 +13,6 @@ body {
     align-items: center;
 }
 
-/* Score Panel Styles */
 .score-panel {
   position: fixed;
   top: 20px;
@@ -42,7 +41,7 @@ body {
 }
 
 
-/* FLIP CARD STYLES */
+
 .flip-card {
     width: 400px;
     height: 70vh;
@@ -80,33 +79,32 @@ body {
 .flip-card-back {
     background-color: white;
     transform: rotateY(180deg);
-    overflow-y: auto; /* Keeps content scrollable if it overflows */
-    display: none; /* Initially hidden */
-    flex-direction: column; /* Added for better layout control on the back */
-    justify-content: space-between; /* Added for better layout control on the back */
+    overflow-y: auto; 
+    display: none; 
+    flex-direction: column; 
+    justify-content: space-between; 
 
-    /* HIDE SCROLLBAR STYLES */
-    /* For Webkit browsers (Chrome, Safari, Edge, Opera) */
+   
     &::-webkit-scrollbar {
         display: none;
     }
-    /* For Firefox */
+   
     scrollbar-width: none;
-    /* For IE and Edge (older versions) */
+   
     -ms-overflow-style: none;
 }
 
-/* FLIP ANIMATION */
+
 .flip-card-inner.flipped {
     transform: rotateY(180deg);
 }
 
 .flip-card-inner.flipped .flip-card-back {
-    display: flex; /* Show as flexbox when flipped */
+    display: flex; 
 }
 
 .flip-card-inner.flipped .flip-card-front {
-    display: none; /* Hide front when flipped */
+    display: none; 
 }
 
 /* IMAGE CONTAINER */
@@ -126,7 +124,7 @@ body {
     object-fit: contain;
 }
 
-/* CAROUSEL */
+
 .carousel {
     height: 200px;
     display: flex;
@@ -142,7 +140,7 @@ body {
     object-fit: contain;
 }
 
-/* FORM ELEMENTS */
+
 .input-group {
     margin-bottom: 15px;
 }
@@ -168,18 +166,17 @@ textarea {
     width: 100%;
     height: 120px;
 
-    /* HIDE SCROLLBAR STYLES FOR TEXTAREA */
-    /* For Webkit browsers (Chrome, Safari, Edge, Opera) */
+    
     &::-webkit-scrollbar {
         display: none;
     }
-    /* For Firefox */
+    
     scrollbar-width: none;
-    /* For IE and Edge (older versions) */
+    
     -ms-overflow-style: none;
 }
 
-/* ICONS */
+
 .fa-volume-up {
     cursor: pointer;
     transition: transform 0.2s;
@@ -190,7 +187,7 @@ textarea {
     color: #0062cc;
 }
 
-/* MOBILE RESPONSIVENESS */
+
 @media (max-width: 576px) {
     .flip-card {
         width: 90%;

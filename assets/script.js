@@ -1,27 +1,26 @@
-// Sound effects
+
 const feedbackSounds = {
   correct: new Audio("assets/sound/GoodJob.mp3"),
   wrong: new Audio("assets/sound/fail-buzzer.mp3")
 };
 
-// Background music
+
 const introSound = new Audio("assets/sound/kids.mp3");
 introSound.volume = 1.0;
 introSound.loop = true;
 
-// Game statistics variables
+
 let attempts = 0;
 let totalCorrect = 0;
 let totalWrong = 0;
 let totalAttempts = 0;
 
-// Update score display
 function updateScoreDisplay() {
   document.getElementById('correct-count').textContent = totalCorrect;
   document.getElementById('wrong-count').textContent = totalWrong;
   document.getElementById('attempt-count').textContent = attempts;
   
-  // Calculate average attempts per correct answer
+ 
   const avgAttempts = totalCorrect > 0 ? (totalAttempts / totalCorrect).toFixed(1) : 0;
   document.getElementById('avg-attempts').textContent = avgAttempts;
 }
@@ -128,8 +127,7 @@ function handleImageError(imgElement) {
 
 window.onload = function () {
   loadRandomAnimal();
-  updateScoreDisplay(); // Initialize score display
-
+  updateScoreDisplay(); 
   feedbackSounds.correct.load().catch(e => console.log("Preload error (correct sound):", e));
   feedbackSounds.wrong.load().catch(e => console.log("Preload error (wrong sound):", e));
 };
@@ -137,7 +135,7 @@ window.onload = function () {
 function loadRandomAnimal() {
   if (animals.length === 0) return;
 
-  attempts = 0; // Reset attempts for new animal
+  attempts = 0; 
   updateScoreDisplay();
 
   const randomIndex = Math.floor(Math.random() * animals.length);
