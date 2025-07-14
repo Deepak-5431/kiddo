@@ -81,8 +81,8 @@ const allAnimals = {
       name: "Lion",
       folder: "llon",
       details: "The lion is one of the largest wild cats. Known as the king of the jungle, lions are fierce and majestic animals.",
-      carousel: ["llon.png", "llon1.png", "Lion2.jpg", "Lion3.jpg"],
-      icon: "llon.png",
+      carousel: ["lion.png", "lion1.png", "Lion2.jpg", "Lion3.jpg"],
+      icon: "lion.png",
       soundFile: "lionsound.mp3"
     }
   ],
