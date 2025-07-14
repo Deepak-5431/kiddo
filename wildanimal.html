@@ -13,6 +13,14 @@
 
 <body data-category="wildanimal">
 
+  <div class="score-panel">
+  <h3>Game Stats</h3>
+  <p>Correct: <span id="correct-count">0</span></p>
+  <p>Wrong: <span id="wrong-count">0</span></p>
+  <p>Current Attempts: <span id="attempt-count">0</span></p>
+  <p>Avg Attempts: <span id="avg-attempts">0</span></p>
+</div>
+
 <div class="container mt-5">
   <audio id="sound">
     <source src="" type="audio/mpeg">
@@ -20,7 +28,7 @@
 
   <div class="row">
     <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-warning"><i class="fas fa-play"></i> Play Again</button>
+      <button type="button" class="btn btn-warning" style="margin-bottom: 18px;"><i class="fas fa-play"></i> Play Again</button>
     </div>
 
     <div class="d-flex justify-content-center align-items-center col-sm-12">

@@ -70,7 +70,7 @@ const allAnimals = {
       soundFile: "elephantsound.mp3"
     },
     {
-      name: "rhino",
+      name: "Rhino",
       folder: "rhino",
       details: "rhino are ferocious animal kids u should better say far away from them ",
       carousel: ["rhino1.jpg", "rhino2.jpg", "rhino3.jpg"],
@@ -79,14 +79,14 @@ const allAnimals = {
     },
     {
       name: "Lion",
-      folder: "Lion",
+      folder: "llon",
       details: "The lion is one of the largest wild cats. Known as the king of the jungle, lions are fierce and majestic animals.",
-      carousel: ["Lion.png", "Lion1.png", "Lion2.jpg", "Lion3.jpg"],
-      icon: "Lion.png",
+      carousel: ["llon.png", "llon1.png", "Lion2.jpg", "Lion3.jpg"],
+      icon: "llon.png",
       soundFile: "lionsound.mp3"
     }
   ],
-  Vegitables: [
+  vegitables: [
     {
       name: "Tomato",
       folder: "tomato",
@@ -96,7 +96,7 @@ const allAnimals = {
       soundFile: "tomato.mp3"
     },
   ],
-  Birds: [
+  birds: [
     {
       name: "peacock",
       folder: "peacock",
