@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* Base Styles */
 body {
     background:
         linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -13,35 +14,34 @@ body {
     align-items: center;
 }
 
+/* Score Panel - Desktop */
 .score-panel {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  z-index: 1000;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
 }
 
 .score-panel h3 {
-  margin-top: 0;
-  color: #0d6efd;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
+    margin-top: 0;
+    color: #0d6efd;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
 }
 
 .score-panel p {
-  margin: 5px 0;
-  font-size: 14px;
+    margin: 5px 0;
 }
 
 .score-panel span {
-  font-weight: bold;
+    font-weight: bold;
 }
 
-
-
+/* Flip Card - Desktop */
 .flip-card {
     width: 400px;
     height: 70vh;
@@ -79,35 +79,25 @@ body {
 .flip-card-back {
     background-color: white;
     transform: rotateY(180deg);
-    overflow-y: auto; 
-    display: none; 
-    flex-direction: column; 
-    justify-content: space-between; 
-
-   
-    &::-webkit-scrollbar {
-        display: none;
-    }
-   
-    scrollbar-width: none;
-   
-    -ms-overflow-style: none;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
 }
-
 
 .flip-card-inner.flipped {
     transform: rotateY(180deg);
 }
 
 .flip-card-inner.flipped .flip-card-back {
-    display: flex; 
+    display: flex;
 }
 
 .flip-card-inner.flipped .flip-card-front {
-    display: none; 
+    display: none;
 }
 
-/* IMAGE CONTAINER */
+/* Image Container - Desktop */
 .image-container {
     height: 200px;
     display: flex;
@@ -124,7 +114,7 @@ body {
     object-fit: contain;
 }
 
-
+/* Carousel - Desktop */
 .carousel {
     height: 200px;
     display: flex;
@@ -140,7 +130,7 @@ body {
     object-fit: contain;
 }
 
-
+/* Form Elements - Desktop */
 .input-group {
     margin-bottom: 15px;
 }
@@ -165,18 +155,9 @@ textarea {
     resize: none;
     width: 100%;
     height: 120px;
-
-    
-    &::-webkit-scrollbar {
-        display: none;
-    }
-    
-    scrollbar-width: none;
-    
-    -ms-overflow-style: none;
 }
 
-
+/* Icons - Desktop */
 .fa-volume-up {
     cursor: pointer;
     transition: transform 0.2s;
@@ -187,107 +168,112 @@ textarea {
     color: #0062cc;
 }
 
-@media (max-width: 768px) {
-    html, body {
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-        flex-direction: column;
+/* Error State */
+.is-invalid {
+    border-color: #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.1) !important;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-5px); }
+    40%, 80% { transform: translateX(5px); }
+}
+
+/* Scrollbar Hide */
+.flip-card-back::-webkit-scrollbar,
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.flip-card-back,
+textarea {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+/* Mobile Styles (max-width: 767px) */
+@media (max-width: 767px) {
+    body {
+        padding: 15px;
+        align-items: flex-start;
     }
 
     .score-panel {
-        position: static;
-        width: 90%;
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin: 0 auto 15px;
         text-align: center;
-        margin-bottom: 20px;
-        box-shadow: none;
         padding: 10px;
-        font-size: 1rem;
     }
 
     .score-panel h3 {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-    }
-
-    .score-panel p {
-        font-size: 1em;
-        display: inline-block;
-        margin: 0 8px;
-    }
-
-    .flip-card {
-        width: 95%;
-        height: auto;
-        margin: 10px auto;
-    }
-
-    .flip-card-front {
-        padding: 0 0px 0px 15px; 
-    }
-
-    .flip-card-back {
-        padding: 15px;
-    }
-}
-
-    .image-container,
-    .carousel {
-        height: 160px;
-        margin-bottom: 15px;
-    }
-
-    .carousel-item img {
-        height: 160px;
-    }
-
-    .input-group-lg > .form-control,
-    .input-group-lg > .input-group-text,
-    .btn-lg {
-        padding: 0.7rem 1.2rem;
         font-size: 1.1rem;
     }
 
-    .btn-primary {
-        padding: 12px;
-        font-size: 18px;
+    .score-panel p {
+        display: inline-block;
+        margin: 0 8px;
+        font-size: 0.85rem;
+    }
+
+    .flip-card {
+        width: 100%;
+        height: auto;
+        min-height: 65vh;
+        max-height: 80vh;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        padding: 15px;
+    }
+
+    .image-container,
+    .carousel {
+        height: 5vh;
+        min-height: 150px;
+        margin: 8px 0;
+    }
+
+    .carousel-item img {
+        height: 25vh;
+        min-height: 150px;
+    }
+
+    .input-group {
+        margin-bottom: 10px;
+    }
+
+    .input-group-text {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .form-control {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary,
+    .btn-warning {
+        padding: 0.75rem;
+        font-size: 1rem;
     }
 
     textarea {
-        height: 110px;
-        font-size: 1em;
+        height: 18vh;
+        min-height: 90px;
+        font-size: 0.9rem;
     }
 
     .animal-name-display h2 {
-        font-size: 1.6em;
+        font-size: 1.3rem;
     }
 
     #speak-button {
-        font-size: 30px !important;
-    }
-
-    .d-flex.justify-content-center.mb-3 {
-        margin-bottom: 1.2rem !important;
-    }
-
-    .btn-warning {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-
-    .input-group-text i {
-        font-size: 24px;
-    }
-
-
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
-    }
-    20%, 60% {
-        transform: translateX(-5px);
-    }
-    40%, 80% {
-        transform: translateX(5px);
+        font-size: 28px !important;
     }
 }
