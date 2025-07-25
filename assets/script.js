@@ -1012,6 +1012,7 @@ window.onload = function () {
   updateScoreDisplay(); 
   feedbackSounds.correct.load().catch(e => console.log("Preload error (correct sound):", e));
   feedbackSounds.wrong.load().catch(e => console.log("Preload error (wrong sound):", e));
+  
 };
 
 function loadRandomAnimal() {
@@ -1026,6 +1027,7 @@ function loadRandomAnimal() {
   document.getElementById("animal-image").src = currentAnimal.iconSrc;
   document.getElementById("animal-image").onerror = function () {
     handleImageError(this);
+    
   };
 
   document.getElementById("sound").src = currentAnimal.sound;
@@ -1053,6 +1055,7 @@ function loadRandomAnimal() {
   });
 
   document.getElementById("C_flip").classList.remove("flipped");
+   document.getElementById("animal-input").focus();
 }
 
 function flip() {
@@ -1085,6 +1088,7 @@ function flip() {
       };
     });
     document.getElementById("C_flip").classList.add("flipped");
+    
   } else {
     totalWrong++;
     updateScoreDisplay();
