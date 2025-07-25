@@ -859,14 +859,6 @@ const allAnimals = {
       soundFile: "vulturesound.mp3"
     },
     {
-      name: "penguin",
-      folder: "penguin",
-      details: "Penguins are flightless, aquatic birds known for their distinctive black and white plumage, streamlined bodies, and powerful swimming abilities.",
-      carousel: ["penguin.png", "penguin1.png", "penguin2.png", "penguin3.png"],
-      icon: "penguin.png",
-      soundFile: "penguinsound.mp3"
-    },
-    {
       name: "macaw",
       folder: "macaw",
       details: "Macaws are large, vibrant, and intelligent New World parrots, known for their long tails and powerful beaks.",
