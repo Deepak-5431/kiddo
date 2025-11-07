@@ -348,12 +348,15 @@ function updateEyeDropdown() {
 
 	const images = currentItem.details?.carousel || [];
 	const currentImageFile = images[activeIndex] || 'No image';
+	
+	// Remove file extension from the filename
+	const fileNameWithoutExtension = currentImageFile.replace(/\.[^/.]+$/, '');
 
-	// build the inner block with the current image filename
+	// build the inner block with the current image filename (without extension)
 	dd.innerHTML = `
 	  <div class="stats-dropdown-content" style="text-align:center; padding:15px; max-width:520px;">
 		<div style="font-weight:600; margin-bottom:8px; color:#fff; font-size:1.1rem;">Current Image</div>
-		<div class="eye-single-name" style="font-size:1rem;">${currentImageFile}</div>
+		<div class="eye-single-name" style="font-size:1rem;">${fileNameWithoutExtension}</div>
 	  </div>
 	`;
 	dd.classList.remove('active');
