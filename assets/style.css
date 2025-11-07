@@ -130,7 +130,6 @@ body.menu-active {
     font-weight: bold;
 }
 
-/* Stats Toggle Button */
 .stats-toggle-btn {
     background: rgba(13, 110, 253, 0.9);
     border: none;
@@ -152,7 +151,6 @@ body.menu-active {
     transform: scale(1.05);
 }
 
-/* Eye toggle uses same visual style as stats button */
 .eye-toggle-btn {
     background: rgba(13, 110, 253, 0.9);
     border: none;
@@ -167,6 +165,7 @@ body.menu-active {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap:100px;
 }
 
 .eye-toggle-btn:hover {
@@ -174,7 +173,6 @@ body.menu-active {
     transform: scale(1.05);
 }
 
-/* Stats Dropdown */
 .stats-dropdown {
     position: fixed;
     top: -300px;
@@ -394,30 +392,17 @@ textarea {
 
 
 .eye-container {
-  display: none; /* hidden by default; script shows it when card flips */
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: none; /* hidden by default; script shows it */
+  flex-direction: row;
+  align-items: center;
   gap: 8px;
-  margin-top: 30px;
   pointer-events: auto;
   z-index: 2000;
 }
 
-.eye-container #eye-icon {
-  width: 36px;
-  height: 36px;
-  object-fit: cover;
-  cursor: pointer;
-  border-radius: 6px;
-  background: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.18);
-}
-
+/* Remove old eye-icon img styles if present */
 
 .eye-dropdown {
-  /* replace previous positioning/visibility rules with slide-from-top behavior */
   position: fixed;
   top: -300px;
   left: 0;
@@ -425,18 +410,6 @@ textarea {
   z-index: 9999;
   transition: top 0.4s ease;
   pointer-events: none;
-
-  min-width: 220px;
-  max-width: 520px;
-  max-height: 260px;
-  overflow: visible; /* single-line content */
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  border-radius: 8px;
-  padding: 8px;
-  font-size: 14px;
-  color: #fff;
 }
 
 /* active: slide down and accept pointer events */
@@ -445,28 +418,31 @@ textarea {
   pointer-events: all;
 }
 
-/* center inner content like stats-dropdown-content */
+/* Dropdown content wrapper */
 .eye-dropdown .stats-dropdown-content {
-  max-width: 520px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  border-radius: 0 0 15px 15px;
+  max-width: 400px;
   margin: 0 auto;
-  background: transparent;
-  box-shadow: none;
-  padding: 0;
+  text-align: center;
 }
 
 /* single-line file name block */
 .eye-dropdown .eye-single-name {
   color: #fff;
-  background: rgba(255,255,255,0.06);
-  padding: 8px 10px;
-  border-radius: 6px;
+  background: rgba(255,255,255,0.2);
+  padding: 10px 15px;
+  border-radius: 8px;
   font-weight: 600;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
 }
 
-/* ensure flip-card is positioned so icon placement works (unchanged) */
+/* ensure flip-card is positioned so icon placement works */
 #C_flip { position: relative; }
 
 

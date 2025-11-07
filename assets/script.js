@@ -324,10 +324,10 @@ function showEyeControl(show) {
 	container.style.display = show ? 'flex' : 'none';
 	// ensure dropdown hidden when toggling visibility
 	const dd = document.getElementById('eye-dropdown');
-	if (dd) dd.style.display = 'none';
+	if (dd) dd.classList.remove('active');
 }
 
-// update dropdown contents for currentItem — single visible carousel filename
+// update dropdown contents for currentItem — show the current visible image filename
 function updateEyeDropdown() {
 	const dd = document.getElementById('eye-dropdown');
 	if (!dd || !currentItem) {
@@ -335,7 +335,7 @@ function updateEyeDropdown() {
 		return;
 	}
 
-	// determine active carousel index
+	// determine active carousel index to get the correct filename
 	let activeIndex = 0;
 	const carouselEl = document.getElementById('demo');
 	if (carouselEl) {
@@ -347,55 +347,21 @@ function updateEyeDropdown() {
 	}
 
 	const images = currentItem.details?.carousel || [];
-	const file = images[activeIndex] || '';
+	const currentImageFile = images[activeIndex] || 'No image';
 
-	// build the same inner block used previously; dropdown visibility is controlled by .active
+	// build the inner block with the current image filename
 	dd.innerHTML = `
-	  <div class="stats-dropdown-content" style="text-align:left; padding:10px; max-width:520px;">
-		<div style="font-weight:600; margin-bottom:6px; color:#fff;">Image</div>
-		<div class="eye-single-name">${file}</div>
+	  <div class="stats-dropdown-content" style="text-align:center; padding:15px; max-width:520px;">
+		<div style="font-weight:600; margin-bottom:8px; color:#fff; font-size:1.1rem;">Current Image</div>
+		<div class="eye-single-name" style="font-size:1rem;">${currentImageFile}</div>
 	  </div>
 	`;
-	// ensure it's not accidentally visible until user toggles
 	dd.classList.remove('active');
 }
 
-// wire icon toggle to show dropdown with .active and close on outside click
 document.addEventListener('DOMContentLoaded', () => {
-	const iconEl = document.getElementById('eye-button');
-	const ddEl = document.getElementById('eye-dropdown');
-
-	// update dropdown once DOM is ready (may be empty until item loads)
-	updateEyeDropdown();
-
-	if (iconEl && ddEl) {
-		iconEl.addEventListener('click', (e) => {
-			e.stopPropagation();
-			updateEyeDropdown(); // refresh content
-			// toggle active class (slides dropdown down/up)
-			ddEl.classList.toggle('active');
-		});
-
-		// clicking outside hides the dropdown (and remove .active)
-		document.addEventListener('click', (ev) => {
-			// if click outside button or dropdown -> close
-			if (!iconEl.contains(ev.target) && !ddEl.contains(ev.target)) {
-				ddEl.classList.remove('active');
-			}
-		});
-
-		// update the dropdown on carousel slide end so text stays in sync
-		const carouselEl = document.getElementById('demo');
-		if (carouselEl) {
-			carouselEl.addEventListener('slid.bs.carousel', () => {
-				updateEyeDropdown();
-				// if dropdown open, keep it open but refresh content
-				if (ddEl.classList.contains('active')) {
-					ddEl.classList.add('active');
-				}
-			});
-		}
-	}
+	// Remove the eye dropdown setup from here - moved to loadRandomItem()
+	// (rest of DOMContentLoaded event listeners remain unchanged)
 });
 
 function updateScoreDisplay() {
@@ -416,11 +382,9 @@ function handleImageError(imgElement) {
 }
 
 function loadRandomItem() {
-
     window.speechSynthesis.cancel();
     animalSound.pause();
     animalSound.currentTime = 0;
-
 
     if (unansweredItems.length === 0) {
         alert("🎉 Congratulations! You've answered all questions correctly. You will now be returned to the menu.");
@@ -442,7 +406,7 @@ function loadRandomItem() {
     details.carousel.forEach((img, index) => {
         const item = document.createElement("div");
         item.className = `carousel-item ${index === 0 ? "active" : ""}`;
-        const image = document.createElement("img");
+               const image = document.createElement("img");
         image.src = `assets/img/${details.folder}/${img}`;
         image.className = "d-block w-100";
         image.onerror = () => handleImageError(image);
@@ -458,9 +422,42 @@ function loadRandomItem() {
 	// Show eye control when loading a fresh item (visible on front side)
 	showEyeControl(true);
 
-	// NEW: update eye dropdown content for the newly loaded item
+	// Update eye dropdown content for the newly loaded item
 	updateEyeDropdown();
-}function flip() {
+
+	// Wire up eye button click handler (only once)
+	const iconEl = document.getElementById('eye-button');
+	const ddEl = document.getElementById('eye-dropdown');
+
+	if (iconEl && ddEl && !iconEl._eyeClickHandlerSet) {
+		iconEl._eyeClickHandlerSet = true;
+		
+		iconEl.addEventListener('click', (e) => {
+			e.stopPropagation();
+			updateEyeDropdown(); // refresh content with current image filename
+			ddEl.classList.toggle('active');
+		});
+
+		// clicking outside hides the dropdown
+		document.addEventListener('click', (ev) => {
+			if (!iconEl.contains(ev.target) && !ddEl.contains(ev.target)) {
+				ddEl.classList.remove('active');
+			}
+		});
+	}
+
+	// Update dropdown when carousel slides to show new filename (only once)
+	const carouselEl = document.getElementById('demo');
+	if (carouselEl && !carouselEl._eyeCarouselListenerSet) {
+		carouselEl._eyeCarouselListenerSet = true;
+		carouselEl.addEventListener('slid.bs.carousel', () => {
+			// Update the dropdown content with the new image filename
+			updateEyeDropdown();
+		});
+	}
+}
+
+function flip() {
     const userInput = document.getElementById("animal-input").value.trim().toLowerCase();
     const inputField = document.getElementById("animal-input");
 
