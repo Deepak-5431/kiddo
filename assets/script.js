@@ -313,6 +313,108 @@ function handleImageError(imgElement) {
     imgElement.alt = "Image not available";
 }
 
+// --- REPLACE dynamic eye DOM creation with static-element logic ---
+// (remove the createEyeDropdown() builder that injected elements into the DOM)
+
+
+// Positioning helper removed for top dropdown; we still keep a small helper to show/hide eye control
+function showEyeControl(show) {
+	const container = document.getElementById('eye-container');
+	if (!container) return;
+	container.style.display = show ? 'flex' : 'none';
+	// ensure dropdown hidden when toggling visibility
+	const dd = document.getElementById('eye-dropdown');
+	if (dd) dd.style.display = 'none';
+}
+
+// update dropdown contents for currentItem — single visible carousel filename
+function updateEyeDropdown() {
+	const dd = document.getElementById('eye-dropdown');
+	if (!dd || !currentItem) {
+		if (dd) dd.classList.remove('active');
+		return;
+	}
+
+	// determine active carousel index
+	let activeIndex = 0;
+	const carouselEl = document.getElementById('demo');
+	if (carouselEl) {
+		const active = carouselEl.querySelector('.carousel-item.active');
+		if (active) {
+			activeIndex = Array.prototype.indexOf.call(carouselEl.querySelectorAll('.carousel-item'), active);
+			if (activeIndex < 0) activeIndex = 0;
+		}
+	}
+
+	const images = currentItem.details?.carousel || [];
+	const file = images[activeIndex] || '';
+
+	// build the same inner block used previously; dropdown visibility is controlled by .active
+	dd.innerHTML = `
+	  <div class="stats-dropdown-content" style="text-align:left; padding:10px; max-width:520px;">
+		<div style="font-weight:600; margin-bottom:6px; color:#fff;">Image</div>
+		<div class="eye-single-name">${file}</div>
+	  </div>
+	`;
+	// ensure it's not accidentally visible until user toggles
+	dd.classList.remove('active');
+}
+
+// wire icon toggle to show dropdown with .active and close on outside click
+document.addEventListener('DOMContentLoaded', () => {
+	const iconEl = document.getElementById('eye-button');
+	const ddEl = document.getElementById('eye-dropdown');
+
+	// update dropdown once DOM is ready (may be empty until item loads)
+	updateEyeDropdown();
+
+	if (iconEl && ddEl) {
+		iconEl.addEventListener('click', (e) => {
+			e.stopPropagation();
+			updateEyeDropdown(); // refresh content
+			// toggle active class (slides dropdown down/up)
+			ddEl.classList.toggle('active');
+		});
+
+		// clicking outside hides the dropdown (and remove .active)
+		document.addEventListener('click', (ev) => {
+			// if click outside button or dropdown -> close
+			if (!iconEl.contains(ev.target) && !ddEl.contains(ev.target)) {
+				ddEl.classList.remove('active');
+			}
+		});
+
+		// update the dropdown on carousel slide end so text stays in sync
+		const carouselEl = document.getElementById('demo');
+		if (carouselEl) {
+			carouselEl.addEventListener('slid.bs.carousel', () => {
+				updateEyeDropdown();
+				// if dropdown open, keep it open but refresh content
+				if (ddEl.classList.contains('active')) {
+					ddEl.classList.add('active');
+				}
+			});
+		}
+	}
+});
+
+function updateScoreDisplay() {
+    document.getElementById('correct-count').textContent = totalCorrect;
+    document.getElementById('wrong-count').textContent = totalWrong;
+    document.getElementById('attempt-count').textContent = attempts;
+    const avgAttempts = totalCorrect > 0 ? (totalAttempts / totalCorrect).toFixed(1) : 0;
+    document.getElementById('avg-attempts').textContent = avgAttempts;
+    document.getElementById('dropdown-correct').textContent = totalCorrect;
+    document.getElementById('dropdown-wrong').textContent = totalWrong;
+    document.getElementById('dropdown-attempts').textContent = attempts;
+    document.getElementById('dropdown-avg').textContent = avgAttempts;
+}
+
+function handleImageError(imgElement) {
+    console.error("Failed to load image:", imgElement.src);
+    imgElement.alt = "Image not available";
+}
+
 function loadRandomItem() {
 
     window.speechSynthesis.cancel();
@@ -352,6 +454,12 @@ function loadRandomItem() {
 
 	// Try to resume intro if user already interacted and no animal is playing
 	playIntroIfAllowed();
+
+	// Show eye control when loading a fresh item (visible on front side)
+	showEyeControl(true);
+
+	// NEW: update eye dropdown content for the newly loaded item
+	updateEyeDropdown();
 }function flip() {
     const userInput = document.getElementById("animal-input").value.trim().toLowerCase();
     const inputField = document.getElementById("animal-input");
@@ -381,6 +489,10 @@ function loadRandomItem() {
 
         feedbackSounds.correct.play();
         document.getElementById("C_flip").classList.add("flipped");
+
+        // hide eye control when card is flipped (opposite behaviour)
+        showEyeControl(false);
+        updateEyeDropdown();
 
         setTimeout(() => {
             const carouselElement = document.getElementById('demo');
@@ -485,11 +597,11 @@ function initializeGame(category, limit, difficulty) {
         }
     });
 
-    // register lightweight gesture listeners so we can start intro when the user first interacts
     document.addEventListener("click", markUserInteracted, { once: true });
     document.addEventListener("touchstart", markUserInteracted, { once: true });
     document.addEventListener("keydown", markUserInteracted, { once: true });
 
+    // using static HTML/CSS for the eye control (no dynamic creation)
     loadRandomItem();
     updateScoreDisplay();
 }
@@ -535,7 +647,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
