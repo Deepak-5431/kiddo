@@ -165,7 +165,6 @@ body.menu-active {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:100px;
 }
 
 .eye-toggle-btn:hover {
@@ -398,6 +397,7 @@ textarea {
   gap: 8px;
   pointer-events: auto;
   z-index: 2000;
+  margin-left: 220px !important; /* Add spacing between stats and eye button */
 }
 
 /* Remove old eye-icon img styles if present */
