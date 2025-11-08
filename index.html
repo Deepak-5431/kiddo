@@ -17,6 +17,13 @@
 <body class="menu-active">
     <div id="menu-screen">
         <h1 class="menu-title text-center">🎮 Play Room</h1>
+
+        <div id="difficulty-boxes" class="d-flex justify-content-center gap-3 mb-4">
+            <button class="btn btn-outline-primary difficulty-box" data-difficulty="easy" type="button">Easy</button>
+            <button class="btn btn-outline-primary difficulty-box" data-difficulty="medium" type="button">Medium</button>
+            <button class="btn btn-outline-primary difficulty-box" data-difficulty="hard" type="button">Hard</button>
+        </div>
+<!--
         <div class="selectors-wrapper row text-center mb-5">
             <div class="col-md-6"> <label for="class-selector" class="form-label fs-5">Choose a Class:</label> <select
                     class="form-select" id="class-selector">
@@ -31,67 +38,70 @@
                 </select>
             </div>
         </div>
-        <div class="game-list">
-            <div class="game-list-item">
-                <div class="game-title">🐦 Birds Game</div>
-                <div class="level-selection"> <a href="index.html?category=birds&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a> </div>
-            </div>
-            <div class="game-list-item">
-                <div class="game-title">🐶 Pet Animals</div>
-                <div class="level-selection"> <a href="index.html?category=petanimal&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a> </div>
-            </div>
-            <div class="game-list-item">
-                <div class="game-title">🦁 Wild Animals</div>
-                <div class="level-selection"> <a href="index.html?category=wildanimal&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a> </div>
-            </div>
-            <div class="game-list-item">
-                <div class="game-title">🥦 Vegetables</div>
-                <div class="level-selection"> <a href="index.html?category=vegetables&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a> </div>
-            </div>
-            <div class="game-list-item">
-                <div class="game-title">🌱 Plants Game</div>
-                <div class="level-selection"> <a href="index.html?category=plants&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a> </div>
-            </div>
-            <div class="game-list-item">
-                <div class="game-title">🐛 Insects</div>
-                <div class="level-selection"> <a href="index.html?category=insects&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a> </div>
-            </div>
+        -->
 
-            <div class="game-list-item">
-                <div class="game-title">🗿 Mode of Transport</div>
-                <div class="level-selection"> <a href="index.html?category=modesoftransport&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a> </div>
-            </div>
-
-            <div class="game-list-item">
-                <div class="game-title">flowers</div>
-                <div class="level-selection"> <a href="index.html?category=flowers&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a> </div>
-            </div>
-
-            <div class="game-list-item">
-                <div class="game-title">💪 Human Body Parts</div>
-                <div class="level-selection">
-                    <a href="index.html?category=humanbodyparts&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a>
+        <div id="activities-wrapper" class="d-none">
+            <div class="game-list">
+                <div class="game-list-item">
+                    <div class="game-title">🐦 Birds Game</div>
+                    <div class="level-selection"> <a href="index.html?category=birds&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a> </div>
                 </div>
-            </div>
-            <div class="game-list-item">
-                <div class="game-title">🪐 Celestial</div>
-                <div class="level-selection">
-                    <a href="index.html?category=celestial&difficulty=easy&limit=10"
-                        class="btn btn-primary game-link">Play</a>
+                <div class="game-list-item">
+                    <div class="game-title">🐶 Pet Animals</div>
+                    <div class="level-selection"> <a href="index.html?category=petanimal&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a> </div>
+                </div>
+                <div class="game-list-item">
+                    <div class="game-title">🦁 Wild Animals</div>
+                    <div class="level-selection"> <a href="index.html?category=wildanimal&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a> </div>
+                </div>
+                <div class="game-list-item">
+                    <div class="game-title">🥦 Vegetables</div>
+                    <div class="level-selection"> <a href="index.html?category=vegetables&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a> </div>
+                </div>
+                <div class="game-list-item">
+                    <div class="game-title">🌱 Plants Game</div>
+                    <div class="level-selection"> <a href="index.html?category=plants&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a> </div>
+                </div>
+                <div class="game-list-item">
+                    <div class="game-title">🐛 Insects</div>
+                    <div class="level-selection"> <a href="index.html?category=insects&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a> </div>
+                </div>
+
+                <div class="game-list-item">
+                    <div class="game-title">🗿 Mode of Transport</div>
+                    <div class="level-selection"> <a href="index.html?category=modesoftransport&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a> </div>
+                </div>
+
+                <div class="game-list-item">
+                    <div class="game-title">flowers</div>
+                    <div class="level-selection"> <a href="index.html?category=flowers&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a> </div>
+                </div>
+
+                <div class="game-list-item">
+                    <div class="game-title">💪 Human Body Parts</div>
+                    <div class="level-selection">
+                        <a href="index.html?category=humanbodyparts&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a>
+                    </div>
+                </div>
+                <div class="game-list-item">
+                    <div class="game-title">🪐 Celestial</div>
+                    <div class="level-selection">
+                        <a href="index.html?category=celestial&difficulty=easy&limit=10"
+                            class="btn btn-primary game-link">Play</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- eye dropdown (slides from top, content injected by script) -->
     <div id="eye-dropdown" class="eye-dropdown" aria-hidden="true"></div>
     <div id="game-screen">
         <div id="stats-dropdown" class="stats-dropdown">

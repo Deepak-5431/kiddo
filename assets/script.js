@@ -263,7 +263,6 @@ let attempts = 0, totalCorrect = 0, totalWrong = 0, totalAttempts = 0;
 let currentItem = null;
 let unansweredItems = [];
 
-// NEW: track whether user performed a gesture (required for autoplay)
 let userInteracted = false;
 function markUserInteracted() {
 	if (userInteracted) return;
@@ -271,7 +270,6 @@ function markUserInteracted() {
 	playIntroIfAllowed();
 }
 
-// --- NEW: helpers to manage intro vs animal sound ---
 function isAudioPlaying(audio) {
 	try {
 		return !!audio && !audio.paused && !audio.ended && audio.currentTime > 0;
@@ -281,14 +279,12 @@ function isAudioPlaying(audio) {
 }
 
 function playIntroIfAllowed() {
-	// play intro only when user interacted, animalSound is NOT playing and speech synthesis isn't speaking
 	if (!userInteracted) return;
 	if (!isAudioPlaying(animalSound) && !window.speechSynthesis.speaking) {
 		introSound.play().catch(() => {});
 	}
 }
 
-// Pause intro when animal plays, resume only if allowed when animal pauses/ends/errors
 animalSound.onplay = () => { try { introSound.pause(); } catch (e) {} };
 animalSound.onpause = () => playIntroIfAllowed();
 animalSound.onended = () => playIntroIfAllowed();
@@ -309,25 +305,19 @@ function updateScoreDisplay() {
 
 function handleImageError(imgElement) {
     console.error("Failed to load image:", imgElement.src);
-    //  imgElement.src = "assets/img/placeholder.png";
     imgElement.alt = "Image not available";
 }
 
-// --- REPLACE dynamic eye DOM creation with static-element logic ---
-// (remove the createEyeDropdown() builder that injected elements into the DOM)
 
 
-// Positioning helper removed for top dropdown; we still keep a small helper to show/hide eye control
 function showEyeControl(show) {
 	const container = document.getElementById('eye-container');
 	if (!container) return;
 	container.style.display = show ? 'flex' : 'none';
-	// ensure dropdown hidden when toggling visibility
 	const dd = document.getElementById('eye-dropdown');
 	if (dd) dd.classList.remove('active');
 }
 
-// update dropdown contents for currentItem — show the current visible image filename
 function updateEyeDropdown() {
 	const dd = document.getElementById('eye-dropdown');
 	if (!dd || !currentItem) {
@@ -335,7 +325,6 @@ function updateEyeDropdown() {
 		return;
 	}
 
-	// determine active carousel index to get the correct filename
 	let activeIndex = 0;
 	const carouselEl = document.getElementById('demo');
 	if (carouselEl) {
@@ -365,6 +354,54 @@ function updateEyeDropdown() {
 document.addEventListener('DOMContentLoaded', () => {
 	// Remove the eye dropdown setup from here - moved to loadRandomItem()
 	// (rest of DOMContentLoaded event listeners remain unchanged)
+
+	// --- NEW: difficulty boxes behavior ---
+	const difficultyBoxes = document.querySelectorAll('.difficulty-box');
+	const difficultySelector = document.getElementById('difficulty-selector');
+	const gameLinks = document.querySelectorAll('.game-link');
+	const activitiesWrapper = document.getElementById('activities-wrapper');
+
+	// hide activities on initial load (menu shows only the three boxes)
+	if (activitiesWrapper) activitiesWrapper.classList.add('d-none');
+
+	function setActiveDifficulty(diff) {
+		// update visual state
+		difficultyBoxes.forEach(b => b.classList.toggle('active', b.dataset.difficulty === diff));
+		// update selector so other flows remain consistent
+		if (difficultySelector) difficultySelector.value = diff;
+		// update all game links to include the chosen difficulty (preserve other params)
+		gameLinks.forEach(link => {
+			try {
+				const url = new URL(link.href, window.location.origin);
+				url.searchParams.set('difficulty', diff);
+				link.href = url.toString();
+			} catch (e) {
+				// ignore malformed hrefs
+			}
+		});
+	}
+
+	// attach click handlers to boxes
+	difficultyBoxes.forEach(box => {
+		box.addEventListener('click', () => {
+			const diff = box.dataset.difficulty || 'easy';
+			setActiveDifficulty(diff);
+			// reveal activities when a difficulty is selected
+			if (activitiesWrapper) {
+				activitiesWrapper.classList.remove('d-none');
+				// scroll into view so user sees activities
+				activitiesWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+		});
+	});
+
+	// initialize active box from selector (if present) but DO NOT auto-show activities
+	if (difficultySelector && difficultySelector.value) {
+		setActiveDifficulty(difficultySelector.value);
+	} else {
+		// default to easy (boxes highlighted), activities remain hidden until user clicks
+		setActiveDifficulty('easy');
+	}
 });
 
 function updateScoreDisplay() {
@@ -383,6 +420,7 @@ function handleImageError(imgElement) {
     console.error("Failed to load image:", imgElement.src);
     imgElement.alt = "Image not available";
 }
+
 
 function loadRandomItem() {
     window.speechSynthesis.cancel();

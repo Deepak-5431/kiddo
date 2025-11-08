@@ -557,3 +557,20 @@ textarea {
         font-size: 1rem;
     }
 }
+
+.difficulty-box {
+    min-width: 110px;
+    padding: 12px 16px;
+    font-weight: 700;
+    border-radius: 12px;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.difficulty-box.active,
+.difficulty-box:focus,
+.difficulty-box:hover {
+    background: #0d6efd;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(13,110,253,0.18);
+}
