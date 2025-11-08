@@ -724,3 +724,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+
+ const urlParams = new URLSearchParams(window.location.search);
+        const hasGameParams = urlParams.has('category');
+
+        if (!hasGameParams) {
+            let selectedDifficulty = null;
+            const currentCategory = 'petanimal';
+            const playBtn = document.getElementById('play-btn');
+
+            function updatePlayState() {
+                if (selectedDifficulty) {
+                    playBtn.disabled = false;
+                } else {
+                    playBtn.disabled = true;
+                }
+            }
+
+            document.querySelectorAll('.difficulty-box').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.difficulty-box').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedDifficulty = btn.dataset.difficulty;
+                    updatePlayState();
+                });
+            });
+
+            playBtn.addEventListener('click', () => {
+                if (selectedDifficulty) {
+                    window.location.href = `index.html?category=${currentCategory}&difficulty=${selectedDifficulty}&limit=10`;
+                }
+            });
+        }
