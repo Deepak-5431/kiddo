@@ -338,10 +338,8 @@ function updateEyeDropdown() {
 	const images = currentItem.details?.carousel || [];
 	const currentImageFile = images[activeIndex] || 'No image';
 	
-	// Remove file extension from the filename
 	const fileNameWithoutExtension = currentImageFile.replace(/\.[^/.]+$/, '');
 
-	// build the inner block with the current image filename (without extension)
 	dd.innerHTML = `
 	  <div class="stats-dropdown-content" style="text-align:center; padding:15px; max-width:520px;">
 		<div style="font-weight:600; margin-bottom:8px; color:#fff; font-size:1.1rem;">Current Image</div>
@@ -352,56 +350,90 @@ function updateEyeDropdown() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-	// Remove the eye dropdown setup from here - moved to loadRandomItem()
-	// (rest of DOMContentLoaded event listeners remain unchanged)
-
-	// --- NEW: difficulty boxes behavior ---
+	
 	const difficultyBoxes = document.querySelectorAll('.difficulty-box');
 	const difficultySelector = document.getElementById('difficulty-selector');
 	const gameLinks = document.querySelectorAll('.game-link');
 	const activitiesWrapper = document.getElementById('activities-wrapper');
 
-	// hide activities on initial load (menu shows only the three boxes)
 	if (activitiesWrapper) activitiesWrapper.classList.add('d-none');
 
 	function setActiveDifficulty(diff) {
-		// update visual state
 		difficultyBoxes.forEach(b => b.classList.toggle('active', b.dataset.difficulty === diff));
-		// update selector so other flows remain consistent
 		if (difficultySelector) difficultySelector.value = diff;
-		// update all game links to include the chosen difficulty (preserve other params)
 		gameLinks.forEach(link => {
 			try {
 				const url = new URL(link.href, window.location.origin);
 				url.searchParams.set('difficulty', diff);
 				link.href = url.toString();
 			} catch (e) {
-				// ignore malformed hrefs
 			}
 		});
 	}
 
-	// attach click handlers to boxes
 	difficultyBoxes.forEach(box => {
 		box.addEventListener('click', () => {
 			const diff = box.dataset.difficulty || 'easy';
 			setActiveDifficulty(diff);
-			// reveal activities when a difficulty is selected
+
 			if (activitiesWrapper) {
 				activitiesWrapper.classList.remove('d-none');
-				// scroll into view so user sees activities
 				activitiesWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+
+			
+			if (document.body.classList.contains('menu-active')) {
+				const urlParams = new URLSearchParams(window.location.search);
+				const categoryFromUrl = urlParams.get('category');
+				const currentCategory = categoryFromUrl || (document.getElementById('current-category')?.dataset.category) || 'petanimal';
+				const limit = '10'; 
+
+				const menuScreen = document.getElementById('menu-screen');
+				const gameScreen = document.getElementById('game-screen');
+				menuScreen.style.display = 'none';
+				gameScreen.style.display = 'block';
+				document.body.classList.remove('menu-active');
+				initializeGame(currentCategory, limit, diff);
+
+				const href = `index.html?category=${encodeURIComponent(currentCategory)}&difficulty=${encodeURIComponent(diff)}&limit=${encodeURIComponent(limit)}`;
+				history.pushState(null, '', href);
 			}
 		});
 	});
 
-	// initialize active box from selector (if present) but DO NOT auto-show activities
 	if (difficultySelector && difficultySelector.value) {
 		setActiveDifficulty(difficultySelector.value);
 	} else {
-		// default to easy (boxes highlighted), activities remain hidden until user clicks
 		setActiveDifficulty('easy');
 	}
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    
+    if (categoryParam) {
+        const categoryData = {
+            'petanimal': { emoji: '🐶', name: 'Pet Animals' },
+            'wildanimal': { emoji: '🦁', name: 'Wild Animals' },
+            'birds': { emoji: '🦜', name: 'Birds' },
+            'fruits': { emoji: '🍎', name: 'Fruits' },
+            'vegetables': { emoji: '🥕', name: 'Vegetables' },
+            'flowers': { emoji: '🌸', name: 'Flowers' }
+        };
+        
+        if (categoryData[categoryParam]) {
+            const categoryCard = document.getElementById('current-category');
+            const categoryEmoji = document.getElementById('category-emoji');
+            const categoryName = document.getElementById('category-name');
+            
+            if (categoryCard && categoryEmoji && categoryName) {
+                categoryCard.dataset.category = categoryParam;
+                categoryEmoji.textContent = categoryData[categoryParam].emoji;
+                categoryName.textContent = categoryData[categoryParam].name;
+            }
+        }
+    }
 });
 
 function updateScoreDisplay() {
@@ -457,16 +489,12 @@ function loadRandomItem() {
     document.getElementById("C_flip").classList.remove("flipped");
     document.getElementById("animal-input").focus();
 
-	// Try to resume intro if user already interacted and no animal is playing
 	playIntroIfAllowed();
 
-	// Show eye control when loading a fresh item (visible on front side)
 	showEyeControl(true);
 
-	// Update eye dropdown content for the newly loaded item
 	updateEyeDropdown();
 
-	// Wire up eye button click handler (only once)
 	const iconEl = document.getElementById('eye-button');
 	const ddEl = document.getElementById('eye-dropdown');
 
@@ -475,11 +503,10 @@ function loadRandomItem() {
 		
 		iconEl.addEventListener('click', (e) => {
 			e.stopPropagation();
-			updateEyeDropdown(); // refresh content with current image filename
+			updateEyeDropdown(); 
 			ddEl.classList.toggle('active');
 		});
 
-		// clicking outside hides the dropdown
 		document.addEventListener('click', (ev) => {
 			if (!iconEl.contains(ev.target) && !ddEl.contains(ev.target)) {
 				ddEl.classList.remove('active');
@@ -487,12 +514,10 @@ function loadRandomItem() {
 		});
 	}
 
-	// Update dropdown when carousel slides to show new filename (only once)
 	const carouselEl = document.getElementById('demo');
 	if (carouselEl && !carouselEl._eyeCarouselListenerSet) {
 		carouselEl._eyeCarouselListenerSet = true;
 		carouselEl.addEventListener('slid.bs.carousel', () => {
-			// Update the dropdown content with the new image filename
 			updateEyeDropdown();
 		});
 	}
@@ -514,12 +539,10 @@ function flip() {
     if (userInput === currentItem.name.toLowerCase()) {
         totalCorrect++;
         updateScoreDisplay();
-        introSound.pause(); // Pause the background music
+        introSound.pause(); 
         unansweredItems = unansweredItems.filter(item => item.id !== currentItem.id);
 
-        // Keep card flipped and focus Next button after speech (handled when user clicks speak)
         const resumeAfterSpeech = () => {
-            // use helper so intro won't play while animal sound loops
             playIntroIfAllowed();
             const nextBtn = document.querySelector("#game-screen .btn-warning");
             if (nextBtn) nextBtn.focus();
@@ -528,7 +551,6 @@ function flip() {
         feedbackSounds.correct.play();
         document.getElementById("C_flip").classList.add("flipped");
 
-        // hide eye control when card is flipped (opposite behaviour)
         showEyeControl(false);
         updateEyeDropdown();
 
@@ -539,15 +561,12 @@ function flip() {
             }
         }, 10);
 
-        // Play the animal sound on repeat but DO NOT auto-trigger description speech
         animalSound.src = `assets/img/${currentItem.details.folder}/${currentItem.details.soundFile}`;
         animalSound.loop = true;
 
-        // Delay playing the animal sound slightly after the "correct" sound
         setTimeout(() => {
             animalSound.play().catch(e => {
                 console.error("Error playing animal sound:", e);
-                // if animal sound fails, try to resume intro if allowed
                 playIntroIfAllowed();
             });
         }, 500);
@@ -557,7 +576,6 @@ function flip() {
         updateScoreDisplay();
         introSound.pause();
         feedbackSounds.wrong.play();
-        // Resume background music after the "wrong" sound plays
         feedbackSounds.wrong.onended = () => {
             playIntroIfAllowed();
         };
@@ -606,7 +624,6 @@ function initializeGame(category, limit, difficulty) {
 
     document.getElementById("speak-button").addEventListener("click", () => {
         if ('speechSynthesis' in window) {
-            // Stop any ongoing synthesis, pause sounds
             window.speechSynthesis.cancel();
             try { animalSound.pause(); } catch (e) {}
             introSound.pause();
@@ -615,9 +632,7 @@ function initializeGame(category, limit, difficulty) {
             const utterance = new SpeechSynthesisUtterance(textToSpeak);
 
             const resumeAll = () => {
-                // use helper so intro won't resume while animal sound is playing
                 playIntroIfAllowed();
-                // Try to resume animal sound (if it has a src); onplay will pause intro again if needed
                 if (animalSound && animalSound.src) {
                     animalSound.play().catch(() => {});
                 }
@@ -639,7 +654,6 @@ function initializeGame(category, limit, difficulty) {
     document.addEventListener("touchstart", markUserInteracted, { once: true });
     document.addEventListener("keydown", markUserInteracted, { once: true });
 
-    // using static HTML/CSS for the eye control (no dynamic creation)
     loadRandomItem();
     updateScoreDisplay();
 }
@@ -725,35 +739,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+window.onpopstate = function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    const limit = urlParams.get('limit');
+    const difficulty = urlParams.get('difficulty');
+    const menuScreen = document.getElementById('menu-screen');
+    const gameScreen = document.getElementById('game-screen');
 
- const urlParams = new URLSearchParams(window.location.search);
-        const hasGameParams = urlParams.has('category');
-
-        if (!hasGameParams) {
-            let selectedDifficulty = null;
-            const currentCategory = 'petanimal';
-            const playBtn = document.getElementById('play-btn');
-
-            function updatePlayState() {
-                if (selectedDifficulty) {
-                    playBtn.disabled = false;
-                } else {
-                    playBtn.disabled = true;
-                }
-            }
-
-            document.querySelectorAll('.difficulty-box').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    document.querySelectorAll('.difficulty-box').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    selectedDifficulty = btn.dataset.difficulty;
-                    updatePlayState();
-                });
-            });
-
-            playBtn.addEventListener('click', () => {
-                if (selectedDifficulty) {
-                    window.location.href = `index.html?category=${currentCategory}&difficulty=${selectedDifficulty}&limit=10`;
-                }
-            });
-        }
+    if (category && limit && difficulty) {
+        menuScreen.style.display = 'none';
+        gameScreen.style.display = 'block';
+        document.body.classList.remove('menu-active');
+        initializeGame(category, limit, difficulty);
+    } else {
+        menuScreen.style.display = 'block';
+        gameScreen.style.display = 'none';
+        document.body.classList.add('menu-active');
+    }
+};
