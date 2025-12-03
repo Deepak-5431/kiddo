@@ -63,7 +63,7 @@ const itemDetails = {
     eyebrow: { name: "Eyebrow", folder: "eyebrow", details: "A strip of hair growing on the ridge above the eye socket, which helps keep sweat out of the eyes.", carousel: ["eyebrow.png", "eyebrow1.png", "eyebrow2.png", "eyebrow3.png"], icon: "eyebrow.png", soundFile: "eyebrowsound.mp3" },
     ferry: { name: "Ferry", folder: "ferry", details: "A boat or ship for conveying passengers and goods, especially over a relatively short distance.", carousel: ["ferry.png", "ferry1.png", "ferry2.png", "ferry3.png"], icon: "ferry.png", soundFile: "ferry.mp3" },
     fingers: { name: "Fingers", folder: "fingers", details: "The five digits at the end of the human hand, used for touching and gripping objects.", carousel: ["fingers.png", "fingers1.png", "fingers2.png", "fingers3.png"], icon: "fingers.png", soundFile: "fingerssound.mp3" },
-    firefly: { name: "Firefly", folder: "firefly", details: "A winged beetle known for using bioluminescence to attract mates.", carousel: ["firefly1.jpeg", "firefly2.jpeg", "firefly3.jpeg", "firefly1.jpeg"], icon: "firefly1.jpeg", soundFile: "fireflysound.mp3" },
+    firefly: { name: "Firefly", folder: "firefly", details: "A winged beetle known for using bioluminescence to attract mates.", carousel: ["firefly1.png", "firefly2.png", "firefly3.png", "firefly1.png"], icon: "firefly1.png", soundFile: "fireflysound.mp3" },
     flamingo: { name: "Flamingo", folder: "flamingo", details: "Tall, pink wading birds with long legs and necks.", carousel: ["flamingo.png", "flamingo1.png", "flamingo2.png"], icon: "flamingo.png", soundFile: "flamingosound.mp3" },
     foot: { name: "Foot", folder: "foot", details: "The part of the leg below the ankle, on which a person stands and walks.", carousel: ["foot.png", "foot1.png", "foot2.png", "foot3.png"], icon: "foot.png", soundFile: "footsound.mp3" },
     garlic: { name: "Garlic", folder: "garlic", details: "A bulbous herb used in cooking.", carousel: ["garlic.png", "garlic1.png", "garlic2.png"], icon: "garlic.png", soundFile: "garlic.mp3" },
@@ -114,7 +114,7 @@ const itemDetails = {
     mint: { name: "Mint", folder: "mint", details: "A versatile and aromatic herb.", carousel: ["mint.png", "mint1.png", "mint2.png"], icon: "mint.png", soundFile: "mint.mp3" },
     monkey: { name: "Monkey", folder: "monkey", details: "Known for their intelligence, agility, and social behavior.", carousel: ["monkey.png", "monkey1.png", "monkey2.png"], icon: "monkey.png", soundFile: "monkeysound.mp3" },
     moon: { name: "Moon", folder: "moon", details: "Earth's only natural satellite, which orbits our planet.", carousel: ["moon.png", "moon1.png", "moon2.png", "moon3.png"], icon: "moon.png", soundFile: "moonsound.mp3" },
-    mosquito: { name: "Mosquito", folder: "mosquito", details: "A small flying insect, the females of which are known for biting.", carousel: ["mosquito1.jpeg", "mosquito2.png", "mosquito3.jpeg", "mosquito1.jpeg"], icon: "mosquito1.jpeg", soundFile: "mosquitosound.mp3" },
+    mosquito: { name: "Mosquito", folder: "mosquito", details: "A small flying insect, the females of which are known for biting.", carousel: ["mosquito1.png", "mosquito2.png", "mosquito3.png", "mosquito1.png"], icon: "mosquito1.png", soundFile: "mosquitosound.mp3" },
     motorcycle: { name: "Motorcycle", folder: "motorcycle", details: "A two-wheeled vehicle that is powered by a motor and has no pedals.", carousel: ["motocycle.png", "motocycle1.png", "motocycle2.png", "motocycle3.png"], icon: "motocycle.png", soundFile: "motocycle.mp3" },
     mouth: { name: "Mouth", folder: "mouth", details: "The opening in the lower part of the face through which food is taken in and sounds are emitted.", carousel: ["mouth.png", "mouth1.png", "mouth2.png", "mouth3.png"], icon: "mouth.png", soundFile: "mouthsound.mp3" },
     mushroom: { name: "Mushroom", folder: "mushroom", details: "The fleshy, spore-bearing fruiting bodies of fungi.", carousel: ["mushroom.png", "mushroom1.png", "mushroom2.png"], icon: "mushroom.png", soundFile: "mushroom.mp3" },
@@ -160,7 +160,7 @@ const itemDetails = {
     skateboard: { name: "Skateboard", folder: "skateboard", details: "A short narrow board with small wheels at each end, ridden standing up.", carousel: ["skateboard.png", "skateboard1.png", "skateboard2.png", "skateboard3.png"], icon: "skateboard.png", soundFile: "skateboard.mp3" },
     snail: { name: "Snail", folder: "snail", details: "Slow-moving molluscs that carry a coiled shell on their back.", carousel: ["snail.png", "snail1.png", "snail2.png"], icon: "snail1.png", soundFile: "snailsound.mp3" },
     sparrow: { name: "Sparrow", folder: "sparrow", details: "Small, generally brown or grey birds.", carousel: ["sparrow.png", "sparrow1.png", "sparrow2.png"], icon: "sparrow.png", soundFile: "sparrowsound.mp3" },
-    spider: { name: "Spider", folder: "spider", details: "Arachnids known for spinning intricate webs to catch prey.", carousel: ["spider1.jpeg", "spider2.jpeg", "spider3.jpeg", "spider1.jpeg"], icon: "spider1.jpeg", soundFile: "spidersound.mp3" },
+    spider: { name: "Spider", folder: "spider", details: "Arachnids known for spinning intricate webs to catch prey.", carousel: ["spider1.png", "spider2.png", "spider3.png", "spider1.png"], icon: "spider1.png", soundFile: "spidersound.mp3" },
     spinach: { name: "Spinach", folder: "spinach", details: "A leafy green vegetable packed with nutrients.", carousel: ["spinach.png", "spinach1.png", "spinach2.png"], icon: "spinach.png", soundFile: "spinach.mp3" },
     squirrel: { name: "Squirrel", folder: "squirrel", details: "Small rodents known for their bushy tails.", carousel: ["squirrel.png", "squirrel1.png", "squirrel2.png"], icon: "squirrel.png", soundFile: "squirrelsound.mp3" },
     star: { name: "Star", folder: "star", details: "A luminous sphere of plasma held together by its own gravity.", carousel: ["star.jpeg", "star2.jpeg", "star3.jpeg", "star4.jpeg"], icon: "star1.jpeg", soundFile: "starsound.mp3" },
@@ -247,6 +247,139 @@ const gameDataByCategory = {
     }
 };
 
+function getCumulativeItems(category, difficulty) {
+    const categoryData = gameDataByCategory[category];
+    if (!categoryData) return [];
+
+    const easy = Array.isArray(categoryData.easy) ? categoryData.easy : [];
+    const medium = Array.isArray(categoryData.medium) ? categoryData.medium : [];
+    const hard = Array.isArray(categoryData.hard) ? categoryData.hard : [];
+
+    
+    switch (difficulty) {
+        case 'easy':
+            return easy;
+        case 'medium':
+            return { easy, medium };
+        case 'hard':
+            return { easy, medium, hard };
+        default:
+            return easy;
+    }
+}
+
+console.log('Medium lists by category:');
+Object.keys(gameDataByCategory).forEach(category => {
+    console.log(category, gameDataByCategory[category].medium || []);
+});
+
+
+function getCombinedItemsByDifficulty(category, difficulty) {
+    const categoryData = gameDataByCategory[category];
+    if (!categoryData) return [];
+
+    const easy = categoryData.easy || [];
+    const medium = categoryData.medium || [];
+    const hard = categoryData.hard || [];
+
+    let combinedItems = [];
+
+    switch (difficulty) {
+        case 'easy':
+            
+            combinedItems = [...easy];
+            break;
+        case 'medium':
+            
+            combinedItems = [...easy, ...medium];
+            break;
+        case 'hard':
+            
+            combinedItems = [...easy, ...medium, ...hard];
+            break;
+        default:
+            combinedItems = [...easy];
+    }
+
+    // Remove duplicates and return
+    return Array.from(new Set(combinedItems));
+}
+
+function initializeGame(category, difficulty) {
+    let selectedIds = getCombinedItemsByDifficulty(category, difficulty);
+    
+    if (!selectedIds || selectedIds.length === 0) {
+        alert("The requested category or difficulty is not available.");
+        window.location.href = "index.html";
+        return;
+    }
+
+    selectedIds = selectedIds.sort(() => Math.random() - 0.5);
+
+    const gameItems = selectedIds.map(id => {
+        const details = itemDetails[id];
+        return { id: id, name: details.name, details: details };
+    });
+
+    unansweredItems = [...gameItems];
+
+    if (unansweredItems.length === 0) {
+        alert("Error: No items found for this selection. Returning to menu.");
+        window.location.href = 'index.html';
+        return;
+    }
+
+    const nextBtn = document.querySelector("#game-screen .btn-warning");
+    if (nextBtn && !nextBtn._loadHandlerSet) {
+        nextBtn.addEventListener("click", loadRandomItem);
+        nextBtn._loadHandlerSet = true;
+    }
+
+    const animalInput = document.getElementById("animal-input");
+    if (animalInput && !animalInput._enterHandlerSet) {
+        animalInput.addEventListener("keypress", e => { if (e.key === "Enter") flip(); });
+        animalInput._enterHandlerSet = true;
+    }
+
+    const speakBtn = document.getElementById("speak-button");
+    if (speakBtn && !speakBtn._speakHandlerSet) {
+        speakBtn.addEventListener("click", () => {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                try { animalSound.pause(); } catch (e) {}
+                introSound.pause();
+
+                const textToSpeak = document.getElementById("text").value;
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
+
+                const resumeAll = () => {
+                    playIntroIfAllowed();
+                    if (animalSound && animalSound.src) {
+                        animalSound.play().catch(() => {});
+                    }
+                    const nextBtn2 = document.querySelector("#game-screen .btn-warning");
+                    if (nextBtn2) nextBtn2.focus();
+                };
+
+                utterance.onend = resumeAll;
+                utterance.onerror = (event) => {
+                    console.error("Speech synthesis error:", event.error);
+                    resumeAll();
+                };
+                
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+        speakBtn._speakHandlerSet = true;
+    }
+
+    document.addEventListener("click", markUserInteracted, { once: true });
+    document.addEventListener("touchstart", markUserInteracted, { once: true });
+    document.addEventListener("keydown", markUserInteracted, { once: true });
+
+    loadRandomItem();
+    updateScoreDisplay();
+}
 
 
 const feedbackSounds = {
@@ -315,11 +448,14 @@ function showEyeControl(show) {
 	if (!container) return;
 	container.style.display = show ? 'flex' : 'none';
 	const dd = document.getElementById('eye-dropdown');
-	if (dd) dd.classList.remove('active');
+	if ( dd) dd.classList.remove('active');
 }
 
 function updateEyeDropdown() {
 	const dd = document.getElementById('eye-dropdown');
+
+
+
 	if (!dd || !currentItem) {
 		if (dd) dd.classList.remove('active');
 		return;
@@ -332,6 +468,7 @@ function updateEyeDropdown() {
 		if (active) {
 			activeIndex = Array.prototype.indexOf.call(carouselEl.querySelectorAll('.carousel-item'), active);
 			if (activeIndex < 0) activeIndex = 0;
+	
 		}
 	}
 
@@ -381,21 +518,18 @@ document.addEventListener('DOMContentLoaded', () => {
 				activitiesWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
 			}
 
-			
 			if (document.body.classList.contains('menu-active')) {
 				const urlParams = new URLSearchParams(window.location.search);
 				const categoryFromUrl = urlParams.get('category');
 				const currentCategory = categoryFromUrl || (document.getElementById('current-category')?.dataset.category) || 'petanimal';
-				const limit = '10'; 
-
 				const menuScreen = document.getElementById('menu-screen');
 				const gameScreen = document.getElementById('game-screen');
 				menuScreen.style.display = 'none';
 				gameScreen.style.display = 'block';
 				document.body.classList.remove('menu-active');
-				initializeGame(currentCategory, limit, diff);
+				initializeGame(currentCategory, diff);  
 
-				const href = `index.html?category=${encodeURIComponent(currentCategory)}&difficulty=${encodeURIComponent(diff)}&limit=${encodeURIComponent(limit)}`;
+				const href = `index.html?category=${encodeURIComponent(currentCategory)}&difficulty=${encodeURIComponent(diff)}`;
 				history.pushState(null, '', href);
 			}
 		});
@@ -419,7 +553,12 @@ document.addEventListener('DOMContentLoaded', function() {
             'birds': { emoji: '🦜', name: 'Birds' },
             'fruits': { emoji: '🍎', name: 'Fruits' },
             'vegetables': { emoji: '🥕', name: 'Vegetables' },
-            'flowers': { emoji: '🌸', name: 'Flowers' }
+            'flowers': { emoji: '🌸', name: 'Flowers' },
+            'insects': { emoji: '🐛', name: 'Insects' },
+            'plants': { emoji: '🌿', name: 'Plants' },
+            'modesoftransport': { emoji: '🚗', name: 'Modes of Transport' },
+            'humanbodyparts': { emoji: '👤', name: 'Human Body Parts' },
+            'celestial': { emoji: '🌌', name: 'Celestial Objects' }
         };
         
         if (categoryData[categoryParam]) {
@@ -460,14 +599,42 @@ function loadRandomItem() {
     animalSound.currentTime = 0;
 
     if (unansweredItems.length === 0) {
-        alert("🎉 Congratulations! You've answered all questions correctly. You will now be returned to the menu.");
-        setTimeout(() => { window.location.href = 'index.html'; }, 2000);
+       
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get('category') || 'petanimal';
+        const difficulty = urlParams.get('difficulty') || 'easy';
+        
+        
+        totalCorrect = 0;
+        totalWrong = 0;
+        totalAttempts = 0;
+        attempts = 0;
+        updateScoreDisplay();
+        
+        let selectedIds = getCombinedItemsByDifficulty(category, difficulty);
+        selectedIds = selectedIds.sort(() => Math.random() - 0.5);
+        
+        const gameItems = selectedIds.map(id => {
+            const details = itemDetails[id];
+            return { id: id, name: details.name, details: details };
+        });
+        
+        unansweredItems = [...gameItems];
+        
+        setTimeout(() => {
+            loadRandomItem();
+        }, 1500);
         return;
     }
+    
     attempts = 0;
     updateScoreDisplay();
+    
     const randomIndex = Math.floor(Math.random() * unansweredItems.length);
     currentItem = unansweredItems[randomIndex];
+    
+    unansweredItems.splice(randomIndex, 1);
+    
     const details = currentItem.details;
     document.getElementById("animal-image").src = `assets/img/${details.folder}/${details.icon}`;
     document.getElementById("animal-name").textContent = currentItem.name.toUpperCase();
@@ -479,7 +646,7 @@ function loadRandomItem() {
     details.carousel.forEach((img, index) => {
         const item = document.createElement("div");
         item.className = `carousel-item ${index === 0 ? "active" : ""}`;
-               const image = document.createElement("img");
+        const image = document.createElement("img");
         image.src = `assets/img/${details.folder}/${img}`;
         image.className = "d-block w-100";
         image.onerror = () => handleImageError(image);
@@ -489,38 +656,36 @@ function loadRandomItem() {
     document.getElementById("C_flip").classList.remove("flipped");
     document.getElementById("animal-input").focus();
 
-	playIntroIfAllowed();
+    playIntroIfAllowed();
+    showEyeControl(true);
+    updateEyeDropdown();
 
-	showEyeControl(true);
+    const iconEl = document.getElementById('eye-button');
+    const ddEl = document.getElementById('eye-dropdown');
 
-	updateEyeDropdown();
+    if (iconEl && ddEl && !iconEl._eyeClickHandlerSet) {
+        iconEl._eyeClickHandlerSet = true;
+        
+        iconEl.addEventListener('click', (e) => {
+            e.stopPropagation();
+            updateEyeDropdown(); 
+            ddEl.classList.toggle('active');
+        });
 
-	const iconEl = document.getElementById('eye-button');
-	const ddEl = document.getElementById('eye-dropdown');
+        document.addEventListener('click', (ev) => {
+            if (!iconEl.contains(ev.target) && !ddEl.contains(ev.target)) {
+                ddEl.classList.remove('active');
+            }
+        });
+    }
 
-	if (iconEl && ddEl && !iconEl._eyeClickHandlerSet) {
-		iconEl._eyeClickHandlerSet = true;
-		
-		iconEl.addEventListener('click', (e) => {
-			e.stopPropagation();
-			updateEyeDropdown(); 
-			ddEl.classList.toggle('active');
-		});
-
-		document.addEventListener('click', (ev) => {
-			if (!iconEl.contains(ev.target) && !ddEl.contains(ev.target)) {
-				ddEl.classList.remove('active');
-			}
-		});
-	}
-
-	const carouselEl = document.getElementById('demo');
-	if (carouselEl && !carouselEl._eyeCarouselListenerSet) {
-		carouselEl._eyeCarouselListenerSet = true;
-		carouselEl.addEventListener('slid.bs.carousel', () => {
-			updateEyeDropdown();
-		});
-	}
+    const carouselEl = document.getElementById('demo');
+    if (carouselEl && !carouselEl._eyeCarouselListenerSet) {
+        carouselEl._eyeCarouselListenerSet = true;
+        carouselEl.addEventListener('slid.bs.carousel', () => {
+            updateEyeDropdown();
+        });
+    }
 }
 
 function flip() {
@@ -540,7 +705,7 @@ function flip() {
         totalCorrect++;
         updateScoreDisplay();
         introSound.pause(); 
-        unansweredItems = unansweredItems.filter(item => item.id !== currentItem.id);
+        
 
         const resumeAfterSpeech = () => {
             playIntroIfAllowed();
@@ -581,6 +746,7 @@ function flip() {
         };
         inputField.classList.add("is-invalid");
         setTimeout(() => inputField.classList.remove("is-invalid"), 1000);
+        
     }
 }
 function playMyAudio() {
@@ -589,22 +755,16 @@ function playMyAudio() {
     animalSound.src = `assets/img/${currentItem.details.folder}/${currentItem.details.soundFile}`;
     introSound.pause();
     animalSound.play().catch(e => console.error("Error playing sound:", e));
-    animalSound.onended = () => playIntroIfAllowed();
 }
 function toggleStatsDropdown() {
     document.getElementById("stats-dropdown").classList.toggle("active");
 }
+function initializeGame(category, difficulty) {
+    let selectedIds = getCombinedItemsByDifficulty(category, difficulty);
+    
+ 
 
-function initializeGame(category, limit, difficulty) {
-    const idList = gameDataByCategory[category]?.[difficulty];
-    if (!idList) {
-        alert("The requested category or difficulty is not available.");
-        window.location.href = "index.html";
-        return;
-    }
-
-    const shuffled = idList.sort(() => 0.5 - Math.random());
-    const selectedIds = shuffled.slice(0, parseInt(limit, 10));
+    selectedIds = selectedIds.sort(() => Math.random() - 0.5);
 
     const gameItems = selectedIds.map(id => {
         const details = itemDetails[id];
@@ -619,36 +779,49 @@ function initializeGame(category, limit, difficulty) {
         return;
     }
 
-    document.querySelector("#game-screen .btn-warning").addEventListener("click", loadRandomItem);
-    document.getElementById("animal-input").addEventListener("keypress", e => { if (e.key === "Enter") flip(); });
+    const nextBtn = document.querySelector("#game-screen .btn-warning");
+    if (nextBtn && !nextBtn._loadHandlerSet) {
+        nextBtn.addEventListener("click", loadRandomItem);
+        nextBtn._loadHandlerSet = true;
+    }
 
-    document.getElementById("speak-button").addEventListener("click", () => {
-        if ('speechSynthesis' in window) {
-            window.speechSynthesis.cancel();
-            try { animalSound.pause(); } catch (e) {}
-            introSound.pause();
+    const animalInput = document.getElementById("animal-input");
+    if (animalInput && !animalInput._enterHandlerSet) {
+        animalInput.addEventListener("keypress", e => { if (e.key === "Enter") flip(); });
+        animalInput._enterHandlerSet = true;
+    }
 
-            const textToSpeak = document.getElementById("text").value;
-            const utterance = new SpeechSynthesisUtterance(textToSpeak);
+    const speakBtn = document.getElementById("speak-button");
+    if (speakBtn && !speakBtn._speakHandlerSet) {
+        speakBtn.addEventListener("click", () => {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                try { animalSound.pause(); } catch (e) {}
+                introSound.pause();
 
-            const resumeAll = () => {
-                playIntroIfAllowed();
-                if (animalSound && animalSound.src) {
-                    animalSound.play().catch(() => {});
-                }
-                const nextBtn = document.querySelector("#game-screen .btn-warning");
-                if (nextBtn) nextBtn.focus();
-            };
+                const textToSpeak = document.getElementById("text").value;
+                const utterance = new SpeechSynthesisUtterance(textToSpeak);
 
-            utterance.onend = resumeAll;
-            utterance.onerror = (event) => {
-                console.error("Speech synthesis error:", event.error);
-                resumeAll();
-            };
-            
-            window.speechSynthesis.speak(utterance);
-        }
-    });
+                const resumeAll = () => {
+                    playIntroIfAllowed();
+                    if (animalSound && animalSound.src) {
+                        animalSound.play().catch(() => {});
+                    }
+                    const nextBtn2 = document.querySelector("#game-screen .btn-warning");
+                    if (nextBtn2) nextBtn2.focus();
+                };
+
+                utterance.onend = resumeAll;
+                utterance.onerror = (event) => {
+                    console.error("Speech synthesis error:", event.error);
+                    resumeAll();
+                };
+                
+                window.speechSynthesis.speak(utterance);
+            }
+        });
+        speakBtn._speakHandlerSet = true;
+    }
 
     document.addEventListener("click", markUserInteracted, { once: true });
     document.addEventListener("touchstart", markUserInteracted, { once: true });
@@ -662,16 +835,16 @@ function initializeGame(category, limit, difficulty) {
 window.onload = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
-    const limit = urlParams.get('limit');
     const difficulty = urlParams.get('difficulty');
     const menuScreen = document.getElementById('menu-screen');
     const gameScreen = document.getElementById('game-screen');
 
-    if (category && limit && difficulty) {
+    if (category && difficulty) {
         menuScreen.style.display = 'none';
         gameScreen.style.display = 'block';
         document.body.classList.remove('menu-active');
-        initializeGame(category, limit, difficulty);
+        
+        initializeGame(category, difficulty);  
     } else {
         menuScreen.style.display = 'block';
         gameScreen.style.display = 'none';
@@ -688,70 +861,39 @@ document.addEventListener('DOMContentLoaded', () => {
         gameLinks.forEach(link => {
             link.addEventListener('click', function (event) {
                 event.preventDefault();
-                const selectedLimit = classSelector.value;
                 const selectedDifficulty = difficultySelector.value;
                 const url = new URL(this.href);
-                url.searchParams.set('limit', selectedLimit);
-
                 url.searchParams.set('difficulty', selectedDifficulty);
                 window.location.href = url.toString();
             });
         });
     }
-});
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    
-    const classSelector = document.getElementById('class-selector');
-    const difficultySelector = document.getElementById('difficulty-selector');
-    const gameLinks = document.querySelectorAll('.game-link');
-
-    if (classSelector && difficultySelector && gameLinks.length) {
-        gameLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                const selectedLimit = classSelector.value;
-                const selectedDifficulty = difficultySelector.value;
-                const url = new URL(this.href);
-                url.searchParams.set('limit', selectedLimit);
-                url.searchParams.set('difficulty', selectedDifficulty);
-                window.location.href = url.toString();
-            });
-        });
-    }
-
 
     const statsDropdown = document.getElementById('stats-dropdown');
     const statsToggleButton = document.querySelector('.stats-toggle-btn');
 
-
     window.addEventListener('click', function (event) {
-
         if (statsDropdown && statsToggleButton) {
-
             if (!statsDropdown.contains(event.target) && !statsToggleButton.contains(event.target)) {
-
                 statsDropdown.classList.remove('active');
             }
         }
     });
-
 });
+
 
 window.onpopstate = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
-    const limit = urlParams.get('limit');
     const difficulty = urlParams.get('difficulty');
     const menuScreen = document.getElementById('menu-screen');
     const gameScreen = document.getElementById('game-screen');
 
-    if (category && limit && difficulty) {
+    if (category && difficulty) {
         menuScreen.style.display = 'none';
         gameScreen.style.display = 'block';
         document.body.classList.remove('menu-active');
-        initializeGame(category, limit, difficulty);
+        initializeGame(category, difficulty);  
     } else {
         menuScreen.style.display = 'block';
         gameScreen.style.display = 'none';

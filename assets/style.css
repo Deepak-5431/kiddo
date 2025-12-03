@@ -1,5 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fredoka+One&display=swap');
 
+:root {
+    --primary-color: #0d6efd;
+    --primary-color-dark: #0b5ed7;
+    --primary-color-light: #667eea;
+    --primary-bg: #fff;
+    --primary-border: #0d6efd;
+    --primary-text: #fff;
+    --warning-bg: #ffc107;
+    --warning-bg-dark: #e0a800;
+    --warning-text: #212529;
+    --category-bg: rgba(255, 255, 255, 0.35);
+    --category-border: rgba(255, 255, 255, 0.6);
+    --menu-title: #5d3a9b;
+    --shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+    --btn-radius: 12px;
+    --card-radius: 24px;
+}
 
 body {
     background-image: url('img/bgimg.png');
@@ -40,7 +57,7 @@ body.menu-active {
 .menu-title {
     font-family: 'Fredoka One', cursive;
     font-size: 3rem;
-    color: #5d3a9b;
+    color: var(--menu-title);
     margin-bottom: 1.5rem;
     text-shadow: 2px 2px 0px rgba(255,255,255,0.7);
 }
@@ -336,9 +353,9 @@ body.menu-active {
 
 .btn {
     background: transparent !important;
-    color: #0d6efd !important;
-    border: 2px solid rgba(13,110,253,0.15) !important; /* subtle outline */
-    border-radius: 12px !important;
+    color: var(--primary-color) !important;
+    border: 2px solid rgba(13,110,253,0.15) !important; 
+    border-radius: var(--btn-radius) !important;
     padding: 8px 14px !important;
     font-weight: 700 !important;
     box-shadow: none !important;
@@ -348,15 +365,28 @@ body.menu-active {
 
 .btn-primary,
 .btn-secondary,
-.btn-warning,
 .btn-outline-primary,
-.btn-outline-secondary,
-.btn-outline-warning {
+.btn-outline-secondary {
     background: transparent !important;
-    color: #0d6efd !important;
+    color: var(--primary-color) !important;
     border: 2px solid rgba(13,110,253,0.15) !important;
     box-shadow: none !important;
     transition: none !important;
+}
+
+.btn-warning {
+    background-color: var(--warning-bg) !important;
+    color: var(--warning-text) !important;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+    transition: background-color 0.15s ease !important;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active {
+    background-color: var(--warning-bg-dark) !important;
+    color: var(--warning-text) !important;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12) !important;
 }
 
 .btn:hover,
@@ -369,21 +399,34 @@ body.menu-active {
     outline: none !important;
 }
 
-/* keep disabled appearance reasonable */
 .btn[disabled],
 .btn.disabled {
     opacity: 0.5;
     pointer-events: none;
 }
 
-/* keep the special selected difficulty appearance intact */
+.difficulty-box {
+    min-width: 110px;
+    padding: 12px 16px;
+    font-weight: 700;
+    border-radius: var(--btn-radius);
+    background: var(--primary-color) !important;
+    color: var(--primary-text) !important;
+    border: 2px solid var(--primary-border) !important;
+    transition: none !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+}
+
+.difficulty-box:hover,
+.difficulty-box:focus,
 .difficulty-box.active {
-    /* ...existing rule preserved, stronger filled blue for selected state */
-    background: #0d6efd !important;
-    color: #fff !important;
-    border-color: #0d6efd !important;
+    background: var(--primary-color) !important;
+    color: var(--primary-text) !important;
+    border-color: var(--primary-border) !important;
     transform: none !important;
     box-shadow: none !important;
+    outline: none !important;
 }
 
 textarea {
@@ -429,15 +472,20 @@ textarea {
 
 
 .eye-container {
-  display: none; 
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-  pointer-events: auto;
-  z-index: 2000;
-  margin-left: 220px !important; 
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 190px; 
+    pointer-events: auto;
+    z-index: 2000;
+    margin-left: 4px !important; 
 }
 
+
+.eye-container button {
+    margin: 0;
+    flex: 0 0 auto;
+}
 
 .eye-dropdown {
   position: fixed;
@@ -597,39 +645,33 @@ textarea {
     min-width: 110px;
     padding: 12px 16px;
     font-weight: 700;
-    border-radius: 12px;
-    background: #0d6efd !important;
-    color: #fff !important;
-    border: 2px solid #0d6efd !important;
+    border-radius: var(--btn-radius);
+    background: var(--primary-color) !important;
+    color: var(--primary-text) !important;
+    border: 2px solid var(--primary-border) !important;
     transition: none !important;
     box-shadow: none !important;
     cursor: pointer !important;
 }
 
 .difficulty-box:hover,
-.difficulty-box:focus {
-    background: #0d6efd !important;
-    color: #fff !important;
+.difficulty-box:focus,
+.difficulty-box.active {
+    background: var(--primary-color) !important;
+    color: var(--primary-text) !important;
+    border-color: var(--primary-border) !important;
     transform: none !important;
     box-shadow: none !important;
     outline: none !important;
 }
 
-.difficulty-box.active {
-    background: #0d6efd !important;
-    color: #fff !important;
-    border-color: #0d6efd !important;
-    transform: none !important;
-    box-shadow: none !important;
-}
-
 .category-card {
     min-width: 220px;
     padding: 20px 28px;
-    background: rgba(255, 255, 255, 0.35);
+    background: var(--category-bg);
     backdrop-filter: blur(6px);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    border-radius: 24px;
+    border: 2px solid var(--category-border);
+    border-radius: var(--card-radius);
 }
 
 #play-btn[disabled] {
@@ -638,8 +680,8 @@ textarea {
 }
 
 .btn-warning {
-    background-color: #ffc107 !important; /* bootstrap warning */
-    color: #212529 !important;
+    background-color: var(--warning-bg) !important;
+    color: var(--warning-text) !important;
     border: none !important;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
     transition: background-color 0.15s ease !important;
@@ -648,7 +690,7 @@ textarea {
 .btn-warning:hover,
 .btn-warning:focus,
 .btn-warning:active {
-    background-color: #e0a800 !important; /* slightly darker on hover */
-    color: #212529 !important;
+    background-color: var(--warning-bg-dark) !important;
+    color: var(--warning-text) !important;
     box-shadow: 0 3px 8px rgba(0,0,0,0.12) !important;
 }

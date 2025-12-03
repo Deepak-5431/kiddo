@@ -32,7 +32,6 @@
                 </div>
             </div>
             <div class="text-center">
-                <!-- Play button removed — difficulty buttons now start the game -->
             </div>
         </div>
     </div>
@@ -72,14 +71,15 @@
                     <div class="flip-card">
                         <div id="C_flip" class="flip-card-inner">
                             <div class="flip-card-front">
-                                <div class="d-flex justify-content-end m-3">
-                                    <button class="stats-toggle-btn" onclick="toggleStatsDropdown()">
-                                        <i class="fas fa-chart-bar"></i>
-                                    </button>
+                                <div class="d-flex justify-content-end m-2 ">
+                                    
                                     <div id="eye-container" class="eye-container" aria-hidden="true" style="margin-left:8px;">
                                         <button id="eye-button" class="eye-toggle-btn" title="Show image name">
-                                            <i class="fas fa-eye"></i>
+                                            <i class="fa fa-info-circle"></i>
                                         </button>
+                                        <button id="eye-button" class="stats-toggle-btn" onclick="toggleStatsDropdown()">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </button>
                                     </div>
                                 </div>
                                 <div class="image-container"> <img class="img-fluid" src="" alt="Game Image"
