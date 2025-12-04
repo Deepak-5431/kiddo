@@ -1,8 +1,8 @@
 const itemDetails = {
     aeroplane: { name: "Aeroplane", folder: "aeroplane", details: "A powered flying vehicle with fixed wings and a weight greater than that of the air it displaces.", carousel: ["aeroplane.png", "aeroplane1.png", "aeroplane2.png", "aeroplane3.png"], icon: "aeroplane.png", soundFile: "aeroplane.mp3" },
-    ant: { name: "Ant", folder: "ant", details: "A social insect known for living in organized colonies.", carousel: ["ant.png", "ant2.png", "ant3.png", "ant1.png"], icon: "ant.png", soundFile: "antsound.mp3" },
+    ant: { name: "Ant", folder: "ant", details: "A social insect known for living in organized colonies.", carousel: ["ant.png", "ant1.png", "ant2.png", "ant3.png"], icon: "ant.png", soundFile: "antsound.mp3" },
     arm: { name: "Arm", folder: "arm", details: "One of the upper limbs of the human body, used for reaching, lifting, and touching.", carousel: ["arm.png", "arm1.png", "arm2.png", "arm3.png"], icon: "arm.png", soundFile: "armsound.mp3" },
-    asteroid: { name: "Asteroid", folder: "asteroid", details: "A small rocky body orbiting the Sun.", carousel: ["asteroid1.jpeg", "asteroid2.jpeg", "asteroid3.jpeg", "asteroid4.jpeg"], icon: "asteroid1.jpeg", soundFile: "asteroidsound.mp3" },
+    asteroid: { name: "Asteroid", folder: "asteroid", details: "A small rocky body orbiting the Sun.", carousel: ["asteroid1.jpeg", "asteroid2.jpeg", "asteroid3.jpeg", "asteroid.jpeg"], icon: "asteroid1.jpeg", soundFile: "asteroidsound.mp3" },
     astronaut: { name: "Astronaut", folder: "astronaut", details: "A person trained to travel and work in space.", carousel: ["astronaut.png", "astronaut1.png", "astronaut2.png", "astronaut3.png"], icon: "astronaut.png", soundFile: "astronautsound.mp3" },
     beans: { name: "Beans", folder: "beans", details: "Edible seeds from the legume family.", carousel: ["beans.png", "beans1.png", "beans2.png"], icon: "beans.png", soundFile: "beans.mp3" },
     bear: { name: "Bear", folder: "bear", details: "Powerful omnivores with excellent fishing abilities.", carousel: ["bear.png", "bear1.png", "bear2.png"], icon: "bear.png", soundFile: "bearsound.mp3" },
@@ -18,7 +18,7 @@ const itemDetails = {
     broccoli: { name: "Broccoli", folder: "broccoli", details: "A green, flowering vegetable.", carousel: ["broccoli.png", "broccoli1.png", "broccoli2.png"], icon: "broccoli.png", soundFile: "broccoli.mp3" },
     buffalo: { name: "Buffalo", folder: "buffalo", details: "Large domesticated animals used for work and milk.", carousel: ["buffalo.png", "buffalo1.png", "buffalo2.png"], icon: "buffalo.png", soundFile: "buffalosound.mp3" },
     bus: { name: "Bus", folder: "bus", details: "A large motor vehicle carrying passengers by road, typically operating on a fixed route.", carousel: ["bus.png", "bus1.png", "bus2.png", "bus3.png"], icon: "bus.png", soundFile: "bus.mp3" },
-    butterfly: { name: "Butterfly", folder: "butterfly", details: "An insect with large, often brightly colored wings.", carousel: ["butterfly.png", "butterfly2.png", "butterfly3.png", "butterfly1.png"], icon: "butterfly.png", soundFile: "butterflysound.mp3" },
+    butterfly: { name: "Butterfly", folder: "butterfly", details: "An insect with large, often brightly colored wings.", carousel: ["butterfly.png", "butterfly1.png", "butterfly2.png", "butterfly3.png"], icon: "butterfly.png", soundFile: "butterflysound.mp3" },
     cabbage: { name: "Cabbage", folder: "cabbage", details: "A leafy vegetable with a dense, rounded head.", carousel: ["cabbage.png", "cabbage1.png", "cabbage2.png"], icon: "cabbage.png", soundFile: "cabbage.mp3" },
     camel: { name: "Camel", folder: "camel", details: "Large, long-necked animals with humps.", carousel: ["camel.png", "camel1.png", "camel2.png"], icon: "camel.png", soundFile: "camelsound.mp3" },
     capsicum: { name: "Capsicum", folder: "capsicum", details: "Also known as bell pepper.", carousel: ["capsicum.png", "capsicum1.png", "capsicum2.png"], icon: "capsicum.png", soundFile: "capsicum.mp3" },
@@ -34,7 +34,7 @@ const itemDetails = {
     chimpanzee: { name: "Chimpanzee", folder: "chimpanzee", details: "Highly intelligent apes that use tools.", carousel: ["chimpanzee.png", "chimpanzee1.png", "chimpanzee2.png"], icon: "chimpanzee.png", soundFile: "chimpanzeesound.mp3" },
     chin: { name: "Chin", folder: "chin", details: "The protruding part of the face below the mouth, formed by the apex of the lower jaw.", carousel: ["chin.png", "chin1.png", "chin2.png", "chin3.png"], icon: "chin.png", soundFile: "chinsound.mp3" },
     cicada: { name: "Cicada", folder: "cicada", details: "Stout-bodied insects known for their loud, buzzing summer song.", carousel: ["cicada.png", "cicada1.png", "cicada2.png"], icon: "cicada1.png", soundFile: "cicadasound.mp3" },
-    cockroach: { name: "Cockroach", folder: "cockroach", details: "A resilient insect with a flattened body, known for inhabiting human dwellings.", carousel: ["cockroach.png", "cockroach2.png", "cockroach3.png", "cockroach.png"], icon: "cockroach.png", soundFile: "cockroachsound.mp3" },
+    cockroach: { name: "Cockroach", folder: "cockroach", details: "A resilient insect with a flattened body, known for inhabiting human dwellings.", carousel: ["cockroach.png", "cockroach1.png", "cockroach2.png", "cockroach3.png"], icon: "cockroach.png", soundFile: "cockroachsound.mp3" },
     comet: { name: "Comet", folder: "comet", details: "A celestial object of ice and dust that has a long tail of gas when near the sun.", carousel: ["comet.png", "comet1.png", "comet2.png", "comet3.png"], icon: "comet.png", soundFile: "cometsound.mp3" },
     coriander: { name: "Coriander", folder: "coriander", details: "Also known as cilantro.", carousel: ["coriander.png", "coriander1.png", "coriander2.png"], icon: "coriander.png", soundFile: "coriander.mp3" },
     corn: { name: "Corn", folder: "corn", details: "Also known as maize.", carousel: ["corn.png", "corn1.png", "corn2.png"], icon: "corn.png", soundFile: "corn.mp3" },
@@ -63,7 +63,7 @@ const itemDetails = {
     eyebrow: { name: "Eyebrow", folder: "eyebrow", details: "A strip of hair growing on the ridge above the eye socket, which helps keep sweat out of the eyes.", carousel: ["eyebrow.png", "eyebrow1.png", "eyebrow2.png", "eyebrow3.png"], icon: "eyebrow.png", soundFile: "eyebrowsound.mp3" },
     ferry: { name: "Ferry", folder: "ferry", details: "A boat or ship for conveying passengers and goods, especially over a relatively short distance.", carousel: ["ferry.png", "ferry1.png", "ferry2.png", "ferry3.png"], icon: "ferry.png", soundFile: "ferry.mp3" },
     fingers: { name: "Fingers", folder: "fingers", details: "The five digits at the end of the human hand, used for touching and gripping objects.", carousel: ["fingers.png", "fingers1.png", "fingers2.png", "fingers3.png"], icon: "fingers.png", soundFile: "fingerssound.mp3" },
-    firefly: { name: "Firefly", folder: "firefly", details: "A winged beetle known for using bioluminescence to attract mates.", carousel: ["firefly1.png", "firefly2.png", "firefly3.png", "firefly1.png"], icon: "firefly1.png", soundFile: "fireflysound.mp3" },
+    firefly: { name: "Firefly", folder: "firefly", details: "A winged beetle known for using bioluminescence to attract mates.", carousel: ["firefly1.png", "firefly2.png", "firefly3.png", "firefly.png"], icon: "firefly1.png", soundFile: "fireflysound.mp3" },
     flamingo: { name: "Flamingo", folder: "flamingo", details: "Tall, pink wading birds with long legs and necks.", carousel: ["flamingo.png", "flamingo1.png", "flamingo2.png"], icon: "flamingo.png", soundFile: "flamingosound.mp3" },
     foot: { name: "Foot", folder: "foot", details: "The part of the leg below the ankle, on which a person stands and walks.", carousel: ["foot.png", "foot1.png", "foot2.png", "foot3.png"], icon: "foot.png", soundFile: "footsound.mp3" },
     garlic: { name: "Garlic", folder: "garlic", details: "A bulbous herb used in cooking.", carousel: ["garlic.png", "garlic1.png", "garlic2.png"], icon: "garlic.png", soundFile: "garlic.mp3" },
@@ -71,7 +71,7 @@ const itemDetails = {
     goat: { name: "Goat", folder: "goat", details: "Known for their milk, meat, and wool production.", carousel: ["goat.png", "goat1.png", "goat2.png"], icon: "goat.png", soundFile: "goatsound.mp3" },
     goose: { name: "Goose", folder: "goose", details: "Large, social waterfowl known for honking calls.", carousel: ["goose.png", "goose1.png", "goose2.png"], icon: "goose.png", soundFile: "goosesound.mp3" },
     gorilla: { name: "Gorilla", folder: "gorilla", details: "Gentle giants with complex social structures.", carousel: ["gorilla.png", "gorilla1.png", "gorilla2.png"], icon: "gorilla.png", soundFile: "gorillasound.mp3" },
-    grasshopper: { name: "Grasshopper", folder: "grasshopper", details: "Insects known for their powerful hind legs, which they use for jumping.", carousel: ["grasshopper1.jpeg", "grasshopper2.jpeg", "grasshopper3.jpeg", "grasshopper1.jpeg"], icon: "grasshopper1.jpeg", soundFile: "grasshoppersound.mp3" },
+    grasshopper: { name: "Grasshopper", folder: "grasshopper", details: "Insects known for their powerful hind legs, which they use for jumping.", carousel: ["grasshopper1.jpeg", "grasshopper2.jpeg", "grasshopper3.jpeg", "grasshopper.png"], icon: "grasshopper1.jpeg", soundFile: "grasshoppersound.mp3" },
     hair: { name: "Hair", folder: "hair", details: "Fine threadlike strands growing from the skin of humans, mammals, and some other animals.", carousel: ["hair.png", "hair1.png", "hair2.png", "hair3.png"], icon: "hair.png", soundFile: "hairsound.mp3" },
     hamster: { name: "Hamster", folder: "hamster", details: "Small rodents known for their cheek pouches.", carousel: ["hamster.png", "hamster1.png", "hamster2.png"], icon: "hamster.png", soundFile: "hamstersound.mp3" },
     hand: { name: "Hand", folder: "hand", details: "The part of a person's arm beyond the wrist, including the palm, fingers, and thumb.", carousel: ["hand.png", "hand1.png", "hand2.png", "hand3.png"], icon: "hand.png", soundFile: "handsound.mp3" },
@@ -82,8 +82,8 @@ const itemDetails = {
     hen: { name: "Hen", folder: "hen", details: "A mature female chicken, known for laying eggs.", carousel: ["hen.png", "hen1.png", "hen2.png"], icon: "hen.png", soundFile: "hensound.mp3" },
     hibiscus: { name: "Hibiscus", folder: "hibiscus", details: "Large, trumpet-shaped flowers with prominent stamens, found in warm, tropical climates.", carousel: ["hibiscus.png", "hibiscus1.png", "hibiscus2.png", "hibiscus3.png"], icon: "hibiscus.png", soundFile: "hibiscussound.mp3" },
     hippopotamus: { name: "Hippopotamus", folder: "hippopotamus", details: "Large, semi-aquatic mammals.", carousel: ["hippopotamus.png", "hippopotamus1.png", "hippopotamus2.png"], icon: "hippopotamus.png", soundFile: "hippopotamussound.mp3" },
-    hollyhock: { name: "Hollyhock", folder: "hollyhock", details: "A tall, stately plant with large, colorful flowers that grow along its main stem.", carousel: ["hollyhock.png", "hollyhock1.png", "hollyhock2.png", "hollyhock3.png"], icon: "hollyhock.png", soundFile: "hollyhocksound.mp3" },
-    honeyBee: { name: "Honey Bee", folder: "honeybee", details: "Flying insects known for producing honey and pollinating flowers.", carousel: ["honeybee1.png", "honeybee2.png", "honeybee3.png", "honeybee1.png"], icon: "honeybee1.png", soundFile: "honeybeesound.mp3" },
+    hollyhock: { name: "Hollyhock", folder: "hollyhocks", details: "A tall, stately plant with large, colorful flowers that grow along its main stem.", carousel: ["hollyhocks.png", "hollyhocks1.png", "hollyhocks2.png", "hollyhocks3.png"], icon: "hollyhocks.png", soundFile: "hollyhocksound.mp3" },
+    honeyBee: { name: "Honey Bee", folder: "honeybee", details: "Flying insects known for producing honey and pollinating flowers.", carousel: ["honeybee1.png", "honeybee2.png", "honeybee3.png", "honeybee.png"], icon: "honeybee1.png", soundFile: "honeybeesound.mp3" },
     hornet: { name: "Hornet", folder: "hornet", details: "The largest type of wasp, known for building large paper nests.", carousel: ["hornet.png", "hornet1.png", "hornet2.png"], icon: "hornet1.png", soundFile: "hornetsound.mp3" },
     horse: { name: "Horse", folder: "horse", details: "Large, strong mammals with a single hoofed toe.", carousel: ["horse.png", "horse1.png", "horse2.png"], icon: "horse.png", soundFile: "horsesound.mp3" },
     hotAirBalloon: { name: "Hot Air Balloon", folder: "hotair-ballon", details: "A large bag filled with hot air or gas to make it rise in the air, with a basket for passengers.", carousel: ["hotair-ballon.png", "hotair-ballon1.png", "hotair-ballon2.png", "hotair-ballon3.png"], icon: "hotair-ballon.png", soundFile: "hotair-ballon.mp3" },
@@ -96,7 +96,7 @@ const itemDetails = {
     kangaroo: { name: "Kangaroo", folder: "kangaroo", details: "Largest marsupials, capable of high-speed hopping.", carousel: ["kangaroo.png", "kangaroo1.png", "kangaroo2.png"], icon: "kangaroo.png", soundFile: "kangaroosound.mp3" },
     kidney: { name: "Kidney", folder: "kidney", details: "A pair of organs that filter waste products from the blood and produce urine.", carousel: ["kidney.png", "kidney1.png", "kidney2.png", "kidney3.png"], icon: "kidney.png", soundFile: "kidneysound.mp3" },
     kingfisher: { name: "Kingfisher", folder: "kingfisher", details: "Small to medium-sized, brightly colored birds.", carousel: ["kingfisher.png", "kingfisher1.png", "kingfisher2.png"], icon: "kingfisher.png", soundFile: "kingfishersound.mp3" },
-    ladybug: { name: "Ladybug", folder: "ladybug", details: "Small beetles, easily recognized by their colorful, often spotted, shell-like wings.", carousel: ["ladybug1.png", "ladybug2.png", "ladybug3.png", "ladybug1.png"], icon: "ladybug1.png", soundFile: "ladybugsound.mp3" },
+    ladybug: { name: "Ladybug", folder: "ladybug", details: "Small beetles, easily recognized by their colorful, often spotted, shell-like wings.", carousel: ["ladybug1.png", "ladybug2.png", "ladybug3.png", "ladybug.png"], icon: "ladybug.png", soundFile: "ladybugsound.mp3" },
     ladyfinger: { name: "Ladyfinger", folder: "ladyfinger", details: "Also known as okra or bhindi.", carousel: ["ladyfinger.png", "ladyfinger1.png", "ladyfinger2.png"], icon: "ladyfinger.png", soundFile: "ladyfinger.mp3" },
     lavender: { name: "Lavender", folder: "lavender", details: "Aromatic purple flowers grown in long spikes, widely used for their calming scent and essential oils.", carousel: ["lavender.png", "lavender1.png", "lavender2.png", "lavender3.png"], icon: "lavender.png", soundFile: "lavendersound.mp3" },
     leg: { name: "Leg", folder: "leg", details: "One of the limbs on which a person or animal walks and stands.", carousel: ["leg.png", "leg1.png", "leg2.png", "leg3.png"], icon: "leg.png", soundFile: "legsound.mp3" },
@@ -114,7 +114,7 @@ const itemDetails = {
     mint: { name: "Mint", folder: "mint", details: "A versatile and aromatic herb.", carousel: ["mint.png", "mint1.png", "mint2.png"], icon: "mint.png", soundFile: "mint.mp3" },
     monkey: { name: "Monkey", folder: "monkey", details: "Known for their intelligence, agility, and social behavior.", carousel: ["monkey.png", "monkey1.png", "monkey2.png"], icon: "monkey.png", soundFile: "monkeysound.mp3" },
     moon: { name: "Moon", folder: "moon", details: "Earth's only natural satellite, which orbits our planet.", carousel: ["moon.png", "moon1.png", "moon2.png", "moon3.png"], icon: "moon.png", soundFile: "moonsound.mp3" },
-    mosquito: { name: "Mosquito", folder: "mosquito", details: "A small flying insect, the females of which are known for biting.", carousel: ["mosquito1.png", "mosquito2.png", "mosquito3.png", "mosquito1.png"], icon: "mosquito1.png", soundFile: "mosquitosound.mp3" },
+    mosquito: { name: "Mosquito", folder: "mosquito", details: "A small flying insect, the females of which are known for biting.", carousel: ["mosquito1.png", "mosquito2.png", "mosquito3.png", "mosquito.png"], icon: "mosquito.png", soundFile: "mosquitosound.mp3" },
     motorcycle: { name: "Motorcycle", folder: "motorcycle", details: "A two-wheeled vehicle that is powered by a motor and has no pedals.", carousel: ["motocycle.png", "motocycle1.png", "motocycle2.png", "motocycle3.png"], icon: "motocycle.png", soundFile: "motocycle.mp3" },
     mouth: { name: "Mouth", folder: "mouth", details: "The opening in the lower part of the face through which food is taken in and sounds are emitted.", carousel: ["mouth.png", "mouth1.png", "mouth2.png", "mouth3.png"], icon: "mouth.png", soundFile: "mouthsound.mp3" },
     mushroom: { name: "Mushroom", folder: "mushroom", details: "The fleshy, spore-bearing fruiting bodies of fungi.", carousel: ["mushroom.png", "mushroom1.png", "mushroom2.png"], icon: "mushroom.png", soundFile: "mushroom.mp3" },
@@ -133,7 +133,7 @@ const itemDetails = {
     peacock: { name: "Peacock", folder: "peacock", details: "Known for their colorful feathers and loud calls.", carousel: ["peacock2.jpg", "peacock1.jpg", "peacock3.jpg"], icon: "peacock.jpg", soundFile: "peacock.mp3" },
     peas: { name: "Peas", folder: "peas", details: "A cool-season crop with edible seeds.", carousel: ["peas.png", "peas1.png", "peas2.png"], icon: "peas.png", soundFile: "peas.mp3" },
     pelican: { name: "Pelican", folder: "pelican", details: "A large water bird with a distinctive throat pouch.", carousel: ["pelican.png", "pelican1.png", "pelican2.png"], icon: "pelican.png", soundFile: "pelicansound.mp3" },
-    pen: { name: "Pen", folder: "pen", details: "A common writing instrument used to apply ink to a surface.", carousel: ["pen1.jpeg", "pen2.jpeg", "pen3.jpeg", "pen4.jpeg"], icon: "pen1.jpeg", soundFile: "pensound.mp3" },
+    pen: { name: "Pen", folder: "pen", details: "A common writing instrument used to apply ink to a surface.", carousel: ["pen1.jpeg", "pen2.jpeg", "pen3.jpeg", "pen.jpeg"], icon: "pen1.jpeg", soundFile: "pensound.mp3" },
     penguin: { name: "Penguin", folder: "penguin", details: "Tallest penguins that endure harsh Antarctic winters.", carousel: ["penguin.png", "penguin1.png", "penguin2.png"], icon: "penguin.png", soundFile: "penguinsound.mp3" },
     periwinkle: { name: "Periwinkle", folder: "periwinkle", details: "A flowering plant with glossy green leaves and delicate, five-petaled flowers.", carousel: ["periwinkle.png", "periwinkle1.png", "periwinkle2.png", "periwinkle3.png"], icon: "periwinkle.png", soundFile: "periwinklesound.mp3" },
     pig: { name: "Pig", folder: "pig", details: "Stout-bodied, short-legged omnivorous mammals.", carousel: ["pig.png", "pig1.png", "pig2.png"], icon: "pig.png", soundFile: "pigsound.mp3" },
@@ -160,10 +160,10 @@ const itemDetails = {
     skateboard: { name: "Skateboard", folder: "skateboard", details: "A short narrow board with small wheels at each end, ridden standing up.", carousel: ["skateboard.png", "skateboard1.png", "skateboard2.png", "skateboard3.png"], icon: "skateboard.png", soundFile: "skateboard.mp3" },
     snail: { name: "Snail", folder: "snail", details: "Slow-moving molluscs that carry a coiled shell on their back.", carousel: ["snail.png", "snail1.png", "snail2.png"], icon: "snail1.png", soundFile: "snailsound.mp3" },
     sparrow: { name: "Sparrow", folder: "sparrow", details: "Small, generally brown or grey birds.", carousel: ["sparrow.png", "sparrow1.png", "sparrow2.png"], icon: "sparrow.png", soundFile: "sparrowsound.mp3" },
-    spider: { name: "Spider", folder: "spider", details: "Arachnids known for spinning intricate webs to catch prey.", carousel: ["spider1.png", "spider2.png", "spider3.png", "spider1.png"], icon: "spider1.png", soundFile: "spidersound.mp3" },
+    spider: { name: "Spider", folder: "spider", details: "Arachnids known for spinning intricate webs to catch prey.", carousel: ["spider1.png", "spider2.png", "spider3.png", "spider.png"], icon: "spider1.png", soundFile: "spidersound.mp3" },
     spinach: { name: "Spinach", folder: "spinach", details: "A leafy green vegetable packed with nutrients.", carousel: ["spinach.png", "spinach1.png", "spinach2.png"], icon: "spinach.png", soundFile: "spinach.mp3" },
     squirrel: { name: "Squirrel", folder: "squirrel", details: "Small rodents known for their bushy tails.", carousel: ["squirrel.png", "squirrel1.png", "squirrel2.png"], icon: "squirrel.png", soundFile: "squirrelsound.mp3" },
-    star: { name: "Star", folder: "star", details: "A luminous sphere of plasma held together by its own gravity.", carousel: ["star.jpeg", "star2.jpeg", "star3.jpeg", "star4.jpeg"], icon: "star1.jpeg", soundFile: "starsound.mp3" },
+    star: { name: "Star", folder: "star", details: "A luminous sphere of plasma held together by its own gravity.", carousel: ["star.jpeg", "star2.jpeg", "star3.jpeg", "star.jpeg"], icon: "star1.jpeg", soundFile: "starsound.mp3" },
     stomach: { name: "Stomach", folder: "stomach", details: "The internal organ where the major part of the digestion of food occurs.", carousel: ["stomach.png", "stomach1.png", "stomach2.png", "stomach3.png"], icon: "stomach.png", soundFile: "stomach.mp3" },
     submarine: { name: "Submarine", folder: "submarine", details: "A watercraft capable of independent operation underwater.", carousel: ["submarine.png", "submarine1.png", "submarine2.png", "submarine3.png"], icon: "submarine.png", soundFile: "submarine.mp3" },
     sun: { name: "Sun", folder: "sun", details: "The star at the center of our solar system, which provides light and heat.", carousel: ["sun.png", "sun1.png", "sun2.png", "sun3.png"], icon: "sun.png", soundFile: "sunsound.mp3" },
@@ -187,7 +187,7 @@ const itemDetails = {
     van: { name: "Van", folder: "van", details: "A medium-sized motor vehicle, typically box-shaped, used for transporting goods or people.", carousel: ["van.png", "van1.png", "van2.png", "van3.png"], icon: "van.png", soundFile: "van.mp3" },
     venus: { name: "Venus", folder: "venus", details: "The second planet from the Sun, it's the hottest planet in our solar system.", carousel: ["venus.png", "venus1.png", "venus2.png", "venus3.png"], icon: "venus.png", soundFile: "venussound.mp3" },
     vulture: { name: "Vulture", folder: "vulture", details: "Large birds of prey known for feeding on carrion.", carousel: ["vulture.png", "vulture1.png", "vulture2.png"], icon: "vulture.png", soundFile: "vulturesound.mp3" },
-    watch: { name: "Watch", folder: "watch", details: "A portable timepiece intended to be carried or worn by a person.", carousel: ["watch1.jpeg", "watch2.jpeg", "watch3.jpeg", "watch4.jpeg"], icon: "watch1.jpeg", soundFile: "watchsound.mp3" },
+    watch: { name: "Watch", folder: "watch", details: "A portable timepiece intended to be carried or worn by a person.", carousel: ["watch1.jpeg", "watch2.jpeg", "watch3.jpeg", "watch.jpeg"], icon: "watch1.jpeg", soundFile: "watchsound.mp3" },
     wolf: { name: "Wolf", folder: "wolf", details: "Highly social pack hunters.", carousel: ["wolf.jpg", "wolf1.jpg", "wolf2.jpg"], icon: "wolf.jpg", soundFile: "wolfsound.mp3" },
     woodpecker: { name: "Woodpecker", folder: "woodpecker", details: "Known for pecking at trees to find insects.", carousel: ["woodpecker.png", "woodpecker1.png", "woodpecker2.png"], icon: "woodpecker.png", soundFile: "woodpeckersound.mp3" },
     yak: { name: "Yak", folder: "yak", details: "A large, long-haired bovine from Central Asia.", carousel: ["yak.png", "yak1.png", "yak2.png"], icon: "yak.png", soundFile: "yaksound.mp3" },
@@ -236,7 +236,7 @@ const gameDataByCategory = {
         hard: ['helicopter', 'hotAirBalloon', 'rocket', 'submarine']
     },
     humanbodyparts: {
-        easy: ['arm', 'chin', 'ear', 'eye', 'eyebrow', 'fingers', 'foot', 'hair', 'hand', 'head', 'leg', 'lip', 'mouth', 'nose', 'toe', 'tongue'],
+        easy: ['arm',  'ear', 'eye', 'eyebrow', 'fingers', 'foot', 'hair', 'hand', 'head', 'leg', 'lip', 'mouth', 'nose', 'toe', 'tongue'],
         medium: ['brain', 'heart', 'intestine', 'kidney', 'liver', 'lungs', 'stomach'],
         hard: ['bladder', 'pancreas']
     },
@@ -247,31 +247,7 @@ const gameDataByCategory = {
     }
 };
 
-function getCumulativeItems(category, difficulty) {
-    const categoryData = gameDataByCategory[category];
-    if (!categoryData) return [];
 
-    const easy = Array.isArray(categoryData.easy) ? categoryData.easy : [];
-    const medium = Array.isArray(categoryData.medium) ? categoryData.medium : [];
-    const hard = Array.isArray(categoryData.hard) ? categoryData.hard : [];
-
-    
-    switch (difficulty) {
-        case 'easy':
-            return easy;
-        case 'medium':
-            return { easy, medium };
-        case 'hard':
-            return { easy, medium, hard };
-        default:
-            return easy;
-    }
-}
-
-console.log('Medium lists by category:');
-Object.keys(gameDataByCategory).forEach(category => {
-    console.log(category, gameDataByCategory[category].medium || []);
-});
 
 
 function getCombinedItemsByDifficulty(category, difficulty) {
@@ -301,7 +277,6 @@ function getCombinedItemsByDifficulty(category, difficulty) {
             combinedItems = [...easy];
     }
 
-    // Remove duplicates and return
     return Array.from(new Set(combinedItems));
 }
 
@@ -613,6 +588,7 @@ function loadRandomItem() {
         
         let selectedIds = getCombinedItemsByDifficulty(category, difficulty);
         selectedIds = selectedIds.sort(() => Math.random() - 0.5);
+
         
         const gameItems = selectedIds.map(id => {
             const details = itemDetails[id];
@@ -632,6 +608,12 @@ function loadRandomItem() {
     
     const randomIndex = Math.floor(Math.random() * unansweredItems.length);
     currentItem = unansweredItems[randomIndex];
+
+  {/*  console.log(`%c LOADING RANDOM ITEM`, 'color: #ffff00; font-weight: bold; font-size: 12px');
+    console.log(`Remaining items: ${unansweredItems.length}`);
+    console.log(`Random index selected: ${randomIndex}`);
+    console.log(`Current item: ${currentItem.name} (ID: ${currentItem.id})`);
+    console.log(`Unanswered items queue:`, unansweredItems.map(item => item.name));*/}
     
     unansweredItems.splice(randomIndex, 1);
     
