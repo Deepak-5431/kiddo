@@ -294,6 +294,7 @@ body.menu-active {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .flip-card-back {
@@ -471,18 +472,22 @@ textarea {
 }
 
 
-.eye-container {
+#eye-container {
     display: none;
     flex-direction: row;
     align-items: center;
-    gap: 190px; 
+    justify-content: space-between;
+    gap: 12px;
     pointer-events: auto;
     z-index: 2000;
-    margin-left: 4px !important; 
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    left: 8px;
 }
 
 
-.eye-container button {
+#eye-container button {
     margin: 0;
     flex: 0 0 auto;
 }
@@ -527,6 +532,12 @@ textarea {
 
 #C_flip { position: relative; }
 
+
+@media (min-width: 768px) {
+    #eye-container {
+        gap: 12px;
+    }
+}
 
 @media (max-width: 767px) {
     body {
@@ -638,6 +649,22 @@ textarea {
 
     .stat-value {
         font-size: 1rem;
+    }
+
+    #eye-container {
+        display: flex;
+        gap: 8px;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        left: 8px;
+        justify-content: space-between;
+    }
+
+    #eye-container button {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
     }
 }
 

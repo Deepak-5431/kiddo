@@ -882,3 +882,10 @@ window.onpopstate = function () {
         document.body.classList.add('menu-active');
     }
 };
+
+function toggleEyeDropdown() {
+    const dd = document.getElementById('eye-dropdown');
+    if (dd) {
+        dd.classList.toggle('active');
+    }
+}

@@ -74,14 +74,14 @@
                             <div class="flip-card-front">
                                 <div class="d-flex justify-content-end m-2 ">
                                     
-                                    <div id="eye-container" class="eye-container" aria-hidden="true" style="margin-left:8px;">
-                                        <button id="eye-button" class="eye-toggle-btn" title="Show image name">
-                                            <i class="fa fa-info-circle"></i>
-                                        </button>
-                                        <button id="eye-button" class="stats-toggle-btn" onclick="toggleStatsDropdown()">
+                                    <div id="eye-container" aria-hidden="true">
+                                    <button id="stats-button" class="stats-toggle-btn" onclick="toggleStatsDropdown()">
                                         <i class="fas fa-chart-bar"></i>
                                     </button>
-                                    </div>
+                                    <button id="eye-button" class="eye-toggle-btn" title="Show image name" onclick="toggleEyeDropdown()">
+                                        <i class="fa fa-info-circle"></i>
+                                    </button>
+                                </div>
                                 </div>
                                 <div class="image-container"> <img class="img-fluid" src="" alt="Game Image"
                                         id="animal-image"> </div>
