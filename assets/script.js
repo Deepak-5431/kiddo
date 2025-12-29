@@ -609,11 +609,11 @@ function loadRandomItem() {
     const randomIndex = Math.floor(Math.random() * unansweredItems.length);
     currentItem = unansweredItems[randomIndex];
 
-  {/*  console.log(`%c LOADING RANDOM ITEM`, 'color: #ffff00; font-weight: bold; font-size: 12px');
+ console.log(`%c LOADING RANDOM ITEM`, 'color: #ffff00; font-weight: bold; font-size: 12px');
     console.log(`Remaining items: ${unansweredItems.length}`);
     console.log(`Random index selected: ${randomIndex}`);
     console.log(`Current item: ${currentItem.name} (ID: ${currentItem.id})`);
-    console.log(`Unanswered items queue:`, unansweredItems.map(item => item.name));*/}
+    console.log(`Unanswered items queue:`, unansweredItems.map(item => item.name));
     
     unansweredItems.splice(randomIndex, 1);
     
@@ -832,60 +832,24 @@ window.onload = function () {
         gameScreen.style.display = 'none';
         document.body.classList.add('menu-active');
     }
-};
 
-document.addEventListener('DOMContentLoaded', () => {
-    const classSelector = document.getElementById('class-selector');
-    const difficultySelector = document.getElementById('difficulty-selector');
-    const gameLinks = document.querySelectorAll('.game-link');
-
-    if (classSelector && difficultySelector && gameLinks.length) {
-        gameLinks.forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                const selectedDifficulty = difficultySelector.value;
-                const url = new URL(this.href);
-                url.searchParams.set('difficulty', selectedDifficulty);
-                window.location.href = url.toString();
-            });
-        });
-    }
-
-    const statsDropdown = document.getElementById('stats-dropdown');
-    const statsToggleButton = document.querySelector('.stats-toggle-btn');
-
-    window.addEventListener('click', function (event) {
-        if (statsDropdown && statsToggleButton) {
-            if (!statsDropdown.contains(event.target) && !statsToggleButton.contains(event.target)) {
-                statsDropdown.classList.remove('active');
+    document.addEventListener('click', function(e) {
+        const backButton = e.target.closest('.btn-back');
+        if (backButton) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentCategory = urlParams.get('category') || 'petanimal';
+            
+            window.speechSynthesis.cancel();
+            if (animalSound) {
+                animalSound.pause();
+                animalSound.currentTime = 0;
             }
+            introSound.pause();
+            
+            window.location.href = `index.html?category=${currentCategory}`;
         }
     });
-});
-
-
-window.onpopstate = function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    const category = urlParams.get('category');
-    const difficulty = urlParams.get('difficulty');
-    const menuScreen = document.getElementById('menu-screen');
-    const gameScreen = document.getElementById('game-screen');
-
-    if (category && difficulty) {
-        menuScreen.style.display = 'none';
-        gameScreen.style.display = 'block';
-        document.body.classList.remove('menu-active');
-        initializeGame(category, difficulty);  
-    } else {
-        menuScreen.style.display = 'block';
-        gameScreen.style.display = 'none';
-        document.body.classList.add('menu-active');
-    }
 };
-
-function toggleEyeDropdown() {
-    const dd = document.getElementById('eye-dropdown');
-    if (dd) {
-        dd.classList.toggle('active');
-    }
-}
