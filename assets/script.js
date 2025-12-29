@@ -738,8 +738,27 @@ function playMyAudio() {
     introSound.pause();
     animalSound.play().catch(e => console.error("Error playing sound:", e));
 }
+
+let statsClickHandlerSet = false;
+
 function toggleStatsDropdown() {
-    document.getElementById("stats-dropdown").classList.toggle("active");
+    const statsButton = document.getElementById("stats-button");
+    const statsDropdown = document.getElementById("stats-dropdown");
+    
+    if (!statsDropdown) return;
+    
+    statsDropdown.classList.toggle("active");
+    
+    // Add click-away listener if not already set
+    if (!statsClickHandlerSet) {
+        statsClickHandlerSet = true;
+        
+        document.addEventListener('click', (ev) => {
+            if (!statsButton.contains(ev.target) && !statsDropdown.contains(ev.target)) {
+                statsDropdown.classList.remove('active');
+            }
+        });
+    }
 }
 function initializeGame(category, difficulty) {
     let selectedIds = getCombinedItemsByDifficulty(category, difficulty);
