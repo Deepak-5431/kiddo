@@ -367,6 +367,8 @@ introSound.loop = true;
 
 
 let animalSound = new Audio();
+let animalSoundLoopCount = 0;
+const maxAnimalSoundLoops = 4;
 let attempts = 0, totalCorrect = 0, totalWrong = 0, totalAttempts = 0;
 let currentItem = null;
 let unansweredItems = [];
@@ -395,7 +397,18 @@ function playIntroIfAllowed() {
 
 animalSound.onplay = () => { try { introSound.pause(); } catch (e) {} };
 animalSound.onpause = () => playIntroIfAllowed();
-animalSound.onended = () => playIntroIfAllowed();
+animalSound.onended = () => {
+    animalSoundLoopCount++;
+    if (animalSoundLoopCount < maxAnimalSoundLoops) {
+        animalSound.currentTime = 0;
+        animalSound.play().catch(e => {
+            console.error("Error looping animal sound:", e);
+            playIntroIfAllowed();
+        });
+    } else {
+        playIntroIfAllowed();
+    }
+};
 animalSound.onerror = () => playIntroIfAllowed();
 
 
@@ -709,7 +722,8 @@ function flip() {
         }, 10);
 
         animalSound.src = `assets/img/${currentItem.details.folder}/${currentItem.details.soundFile}`;
-        animalSound.loop = true;
+        animalSound.loop = false;
+        animalSoundLoopCount = 0;
 
         setTimeout(() => {
             animalSound.play().catch(e => {
@@ -735,6 +749,8 @@ function playMyAudio() {
     if (!currentItem) return;
 
     animalSound.src = `assets/img/${currentItem.details.folder}/${currentItem.details.soundFile}`;
+    animalSound.loop = false;
+    animalSoundLoopCount = 0;
     introSound.pause();
     animalSound.play().catch(e => console.error("Error playing sound:", e));
 }
