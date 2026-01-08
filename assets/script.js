@@ -299,7 +299,7 @@ function resetSliderToFirst() {
     });
 
     updateEyeDropdown();
-    // start autoplay when the slider is reset (e.g., after showing the back)
+    // start autoplay 
     startSliderAutoplay();
 }
 
@@ -341,7 +341,7 @@ function loadRandomItem() {
         return;
     }
 
-    // stop autoplay while the front card is shown / a new item is set
+    // stop autoplay while the front card is shown
     stopSliderAutoplay();
     
     attempts = 0;
@@ -635,13 +635,12 @@ window.onload = function () {
     const menuScreen = document.getElementById('menu-screen');
     const gameScreen = document.getElementById('game-screen');
 
-    // Single global document click handler (delegated)
+    
     if (!document._globalClickHandlerSet) {
         document._globalClickHandlerSet = true;
         document.addEventListener('click', handleDocumentClick);
     }
 
-    // Wire UI event listeners (replaces inline onclick handlers)
     const statsButton = document.getElementById('stats-button');
     if (statsButton && !statsButton._handlerSet) {
         statsButton._handlerSet = true;
