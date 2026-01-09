@@ -52,7 +52,7 @@ const itemDetails = {
     cucumber: { name: "Cucumber", folder: "cucumber", details: "A widely cultivated, creeping vine plant.", carousel: ["cucumber.png", "cucumber1.png", "cucumber2.png"], icon: "cucumber.png", soundFile: "cucumber.mp3" },
     daisy: { name: "Daisy", folder: "daisy", details: "Common flowers with white petals and a yellow center, often symbolizing innocence and purity.", carousel: ["daisy.png", "daisy1.png", "daisy2.png", "daisy3.png"], icon: "daisy.png", soundFile: "daisysound.mp3" },
     deer: { name: "Deer", folder: "deer", details: "Graceful animals found in forests and grassland.", carousel: ["deer.png", "deer1.png", "deer2.png"], icon: "deer.png", soundFile: "deersound.mp3" },
-    dog: { name: "Dog", folder: "dog", details: "A domesticated descendant of the wolf.", carousel: ["dg1.jpg", "dg2.jpg", "dg3.jpg"], icon: "dog.png", soundFile: "dogsound.wav" },
+    dog: { name: "Dog", folder: "dog", details: "A domesticated descendant of the wolf.", carousel: ["dog1.jpg", "dog2.jpg", "dog3.jpg"], icon: "dog.png", soundFile: "dogsound.wav" },
     dolphin: { name: "Dolphin", folder: "dolphin", details: "Intelligent marine mammals known for echolocation.", carousel: ["dolphin.png", "dolphin1.png", "dolphin2.png"], icon: "dolphin.png", soundFile: "dolphinsound.mp3" },
     donkey: { name: "Donkey", folder: "donkey", details: "Domesticated mammals of the horse family.", carousel: ["donkey.png", "donkey1.png", "donkey2.png"], icon: "donkey.png", soundFile: "donkeysound.mp3" },
     dove: { name: "Dove", folder: "dove", details: "Small to medium-sized birds of the pigeon family.", carousel: ["dove.png", "dove1.png", "dove2.png"], icon: "dove.png", soundFile: "dovesound.mp3" },
