@@ -564,10 +564,16 @@ function initializeGame(category, difficulty) {
 
     selectedIds = selectedIds.sort(() => Math.random() - 0.5);
 
-    const gameItems = selectedIds.map(id => {
-        const details = itemDetails[id];
-        return { id: id, name: details.name, details: details };
-    });
+    const gameItems = selectedIds
+        .map(id => {
+            const details = itemDetails[id];
+            if (!details) {
+                console.warn("Missing itemDetails for id:", id);
+                return null;
+            }
+            return { id: id, name: details.name, details: details };
+        })
+        .filter(Boolean);
 
     unansweredItems = [...gameItems];
 
