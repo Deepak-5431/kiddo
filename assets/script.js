@@ -1,4 +1,4 @@
-import { categoryData } from './gameData.js';
+import { categoryData, gameDataByCategory,itemDetails } from './gameData.js';
 
 
 function getCombinedItemsByDifficulty(category, difficulty) {

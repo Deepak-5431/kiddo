@@ -14,7 +14,7 @@ export const categoryData = {
     'shapes': { emoji: '🟢', name: 'shapes' },
 };
 
-const itemDetails = {
+export const itemDetails = {
     aeroplane: { name: "Aeroplane", folder: "aeroplane", details: "A powered flying vehicle with fixed wings and a weight greater than that of the air it displaces.", carousel: ["aeroplane.png", "aeroplane1.png", "aeroplane2.png", "aeroplane3.png"], icon: "aeroplane.png", soundFile: "aeroplane.mp3" },
     ant: { name: "Ant", folder: "ant", details: "A social insect known for living in organized colonies.", carousel: ["ant.png", "ant1.png", "ant2.png", "ant3.png"], icon: "ant.png", soundFile: "antsound.mp3" },
     antelope: { name: "Antelope", folder: "antelope", details: "A swift, grazing mammal commonly found in grasslands.", carousel: ["antelope.png", "antelope1.png", "antelope2.png"], icon: "antelope.png", soundFile: "antelope.mp3" },
@@ -225,7 +225,7 @@ const itemDetails = {
     zebra: { name: "Zebra", folder: "zebra", details: "Known for their distinctive black and white striped coats.", carousel: ["zebra.png", "zebra1.png", "zebra2.png"], icon: "zebra.png", soundFile: "zebrasound.mp3" }
 };
 
-const gameDataByCategory = {
+export const gameDataByCategory = {
     petanimal: {
         easy: ['cat', 'cow', 'dog', 'goat', 'hen', 'ox', 'pig', 'rat'],
         medium: ['camel', 'donkey', 'hamster', 'horse', 'monkey', 'rabbit', 'sheep', 'squirrel'],
