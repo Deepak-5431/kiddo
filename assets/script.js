@@ -318,8 +318,10 @@ function loadRandomItem() {
 
         
         const gameItems = selectedIds.map(id => {
-            const details = itemDetails[id];
-            return { id: id, name: details.name, details: details };
+            {/*const details = itemDetails[id];
+            return { id: id, name: details.name, details: details };*/}
+             const itemData = itemDetails[id];
+            return { id: id, name: itemData.name, details: itemData };
         });
         
         unansweredItems = [...gameItems];
