@@ -198,9 +198,10 @@ document.addEventListener('DOMContentLoaded', function() {
             'flowers': { emoji: '🌸', name: 'Flowers' },
             'insects': { emoji: '🐛', name: 'Insects' },
             'plants': { emoji: '🌿', name: 'Plants' },
-            'modesoftransport': { emoji: '<img src="assets/img/truck.gif" alt="Truck" style="max-width: 80px; height: auto;">', name: 'Modes of Transport' },
+            'modesoftransport': { emoji: '🚚', name: 'Modes of Transport' },
             'humanbodyparts': { emoji: '👤', name: 'Human Body Parts' },
-            'celestial': { emoji: '🌌', name: 'Celestial Objects' }
+            'celestial': { emoji: '🌌', name: 'Celestial Objects' },
+            'shapes':{emoji:'🟢',name:'shapes'},
         };
         
         if (categoryData[categoryParam]) {
