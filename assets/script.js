@@ -220,11 +220,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Refresh on‑screen statistics and dropdown stats
 function updateScoreDisplay() {
-    document.getElementById('correct-count').textContent = totalCorrect;
-    document.getElementById('wrong-count').textContent = totalWrong;
-    document.getElementById('attempt-count').textContent = attempts;
+    // causing dropdown issues so only update dropdown stats
+    // document.getElementById('correct-count').textContent = totalCorrect;
+    // document.getElementById('wrong-count').textContent = totalWrong;
+    // document.getElementById('attempt-count').textContent = attempts;
     const avgAttempts = totalCorrect > 0 ? (totalAttempts / totalCorrect).toFixed(1) : 0;
-    document.getElementById('avg-attempts').textContent = avgAttempts;
+    // document.getElementById('avg-attempts').textContent = avgAttempts;
     document.getElementById('dropdown-correct').textContent = totalCorrect;
     document.getElementById('dropdown-wrong').textContent = totalWrong;
     document.getElementById('dropdown-attempts').textContent = attempts;
