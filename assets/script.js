@@ -1,4 +1,4 @@
-// itemDetails and gameDataByCategory in assets/gameData.js
+import { categoryData } from './gameData.js';
 
 
 function getCombinedItemsByDifficulty(category, difficulty) {
@@ -189,20 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryParam = urlParams.get('category');
     
     if (categoryParam) {
-        const categoryData = {
-            'petanimal': { emoji: '🐶', name: 'Pet Animals' },
-            'wildanimal': { emoji: '🦁', name: 'Wild Animals' },
-            'birds': { emoji: '🦜', name: 'Birds' },
-            'fruits': { emoji: '🍎', name: 'Fruits' },
-            'vegetables': { emoji: '🥕', name: 'Vegetables' },
-            'flowers': { emoji: '🌸', name: 'Flowers' },
-            'insects': { emoji: '🐛', name: 'Insects' },
-            'plants': { emoji: '🌿', name: 'Plants' },
-            'modesoftransport': { emoji: '🚚', name: 'Modes of Transport' },
-            'humanbodyparts': { emoji: '👤', name: 'Human Body Parts' },
-            'celestial': { emoji: '🌌', name: 'Celestial Objects' },
-            'shapes':{emoji:'🟢',name:'shapes'},
-        };
+        // Use categoryData from gameData.js
         
         if (categoryData[categoryParam]) {
             const categoryCard = document.getElementById('current-category');

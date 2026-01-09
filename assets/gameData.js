@@ -1,3 +1,19 @@
+// Category here
+export const categoryData = {
+    'petanimal': { emoji: '🐶', name: 'Pet Animals' },
+    'wildanimal': { emoji: '🦁', name: 'Wild Animals' },
+    'birds': { emoji: '🦜', name: 'Birds' },
+    'fruits': { emoji: '🍎', name: 'Fruits' },
+    'vegetables': { emoji: '🥕', name: 'Vegetables' },
+    'flowers': { emoji: '🌸', name: 'Flowers' },
+    'insects': { emoji: '🐛', name: 'Insects' },
+    'plants': { emoji: '🌿', name: 'Plants' },
+    'modesoftransport': { emoji: '🚗', name: 'Modes of Transport' },
+    'humanbodyparts': { emoji: '👤', name: 'Human Body Parts' },
+    'celestial': { emoji: '🌌', name: 'Celestial Objects' },
+    'shapes': { emoji: '🟢', name: 'shapes' },
+};
+
 const itemDetails = {
     aeroplane: { name: "Aeroplane", folder: "aeroplane", details: "A powered flying vehicle with fixed wings and a weight greater than that of the air it displaces.", carousel: ["aeroplane.png", "aeroplane1.png", "aeroplane2.png", "aeroplane3.png"], icon: "aeroplane.png", soundFile: "aeroplane.mp3" },
     ant: { name: "Ant", folder: "ant", details: "A social insect known for living in organized colonies.", carousel: ["ant.png", "ant1.png", "ant2.png", "ant3.png"], icon: "ant.png", soundFile: "antsound.mp3" },
