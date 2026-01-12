@@ -39,6 +39,7 @@ introSound.loop = true;
 
 
 let animalSound = new Audio();
+let detailsAudio = new Audio(); // Audio for playing details
 let animalSoundLoopCount = 0;
 const maxAnimalSoundLoops = 4;
 let attempts = 0, totalCorrect = 0, totalWrong = 0, totalAttempts = 0;
@@ -93,6 +94,7 @@ function showEyeControl(show) {
 	const dd = document.getElementById('eye-dropdown');
 	if ( dd) dd.classList.remove('active');
 }
+
 // Update the dropdown that shows the current carousel image name
 function updateEyeDropdown() {
 	const dd = document.getElementById('eye-dropdown');
@@ -587,14 +589,19 @@ function initializeGame(category, difficulty) {
     const speakBtn = document.getElementById("speak-button");
     if (speakBtn && !speakBtn._speakHandlerSet) {
         speakBtn.addEventListener("click", () => {
-            if ('speechSynthesis' in window) {
+            // Stop all other audio
+            if (window.speechSynthesis && window.speechSynthesis.cancel) {
                 window.speechSynthesis.cancel();
-                try { animalSound.pause(); } catch (e) {}
-                introSound.pause();
+            }
+            try { animalSound.pause(); } catch (e) {}
+            try { detailsAudio.pause(); } catch (e) {}
+            introSound.pause();
 
-                const textToSpeak = document.getElementById("text").value;
-                const utterance = new SpeechSynthesisUtterance(textToSpeak);
-
+            // Play the details audio file
+            const details = currentItem.details;
+            if (details && details.detailsSoundFile && details.folder) {
+                detailsAudio.src = `assets/img/${details.folder}/${details.detailsSoundFile}`;
+                
                 const resumeAll = () => {
                     playIntroIfAllowed();
                     if (animalSound && animalSound.src) {
@@ -604,13 +611,16 @@ function initializeGame(category, difficulty) {
                     if (nextBtn2) nextBtn2.focus();
                 };
 
-                utterance.onend = resumeAll;
-                utterance.onerror = (event) => {
-                    console.error("Speech synthesis error:", event.error);
+                detailsAudio.onended = resumeAll;
+                detailsAudio.onerror = (event) => {
+                    console.error("Details audio error:", event);
                     resumeAll();
                 };
                 
-                window.speechSynthesis.speak(utterance);
+                detailsAudio.play().catch((e) => {
+                    console.error("Failed to play details audio:", e);
+                    resumeAll();
+                });
             }
         });
         speakBtn._speakHandlerSet = true;
