@@ -47,7 +47,6 @@ let currentItem = null;
 let unansweredItems = [];
 
 let userInteracted = false;
-// Track the first real user interaction so audio can start
 function markUserInteracted() {
 	if (userInteracted) return;
 	userInteracted = true;
