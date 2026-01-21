@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fredoka+One&display=swap');
 :root{--primary-color:#0d6efd;--primary-color-dark:#0b5ed7;--warning-bg:#ffc107;--warning-bg-dark:#e0a800;--warning-text:#212529;--category-bg:rgba(255,255,255,0.35);--category-border:rgba(255,255,255,0.6);--menu-title:#5d3a9b;--btn-radius:12px;--card-radius:24px}
-body{background:url('img/bgimg.png') center/cover fixed;min-height:100vh;font-family:'Poppins',sans-serif;margin:0;padding:0;display:flex;justify-content:center;align-items:center}
+body{background:url('img/bgimg.jpg') center/cover fixed;min-height:100vh;font-family:'Poppins',sans-serif;margin:0;padding:0;display:flex;justify-content:center;align-items:center}
 #menu-screen{background:rgba(255,255,255,0.25);backdrop-filter:blur(1px);padding:2rem;border-radius:25px;box-shadow:0 15px 45px rgba(0,0,0,0.2);width:100%;max-width:800px;border:2px solid rgba(255,255,255,0.5);position:relative}
 .menu-title{font-family:'Fredoka One',cursive;font-size:3rem;color:var(--menu-title);margin-bottom:1.5rem;text-shadow:2px 2px 0 rgba(255,255,255,0.7)}
 .difficulty-selector-wrapper{margin-bottom:2.5rem;padding:1rem;background:transparent;border-radius:15px}
@@ -27,7 +27,7 @@ body{background:url('img/bgimg.png') center/cover fixed;min-height:100vh;font-fa
 .stat-value{font-weight:bold;font-size:1.1rem;color:#fff}
 .flip-card{width:400px;height:70vh;perspective:1000px}
 .flip-card-inner{position:relative;width:100%;height:100%;transition:transform 0.6s;transform-style:preserve-3d;box-shadow:0 4px 20px rgba(0,0,0,0.2);border-radius:10px}
-.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:10px;padding:20px;background:url('img/bgimg.png') center/cover;z-index:1}
+.flip-card-front,.flip-card-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:10px;padding:20px;background:url('img/bgimg.jpg') center/cover;z-index:1}
 .flip-card-front::before,.flip-card-back::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.9);border-radius:inherit;z-index:-1}
 .flip-card-front{display:flex;flex-direction:column;justify-content:space-between}
 .flip-card-back{transform:rotateY(180deg);overflow-y:auto;display:none;flex-direction:column;justify-content:space-between}
