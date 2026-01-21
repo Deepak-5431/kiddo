@@ -369,7 +369,14 @@ function loadRandomItem() {
         carouselInner.appendChild(item);
     });
     document.getElementById("C_flip").classList.remove("flipped");
-    document.getElementById("animal-input").focus();
+    
+    // Only auto-focus on desktop, not on mobile (to prevent keyboard pop-up)
+    const inputField = document.getElementById("animal-input");
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (!isMobile) {
+        inputField.focus();
+    }
 
     playIntroIfAllowed();
     showEyeControl(true);
